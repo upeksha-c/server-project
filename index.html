@@ -24,8 +24,13 @@
         <label for="occupation">Occupation:</label>
         <input type="text" placeholder="Enter your Occupation">
         <br>
-        <button>submit</button>
+        <button onclick="click()">submit</button>
     </form>
-
+<script>
+    let button = document.getElementsByTagName("button");
+    function click(){
+        alert("you submitted your form");
+    }
+</script>
 </body>
 </html>
