@@ -6,10 +6,8 @@
     <title>Testing the repository</title>
 </head>
 <body>
-    <img src="photo.jpg" alt="photo">
+    <img src="photo.jpg" alt="photo" width="500px">
     <h1>Welcome to Archana's form..</h1>
-    <h2>welcome to our master mind archana's form</h2>
-    <p>Fill the form to get the updates from us</p>
     <form>
         <label for="firstname">Firstname:</label>
         <input type="text" placeholder="Enter your first name">
@@ -26,8 +24,13 @@
         <label for="occupation">Occupation:</label>
         <input type="text" placeholder="Enter your Occupation">
         <br>
-        <button>submit</button>
+        <button onClick="click()">submit</button>
     </form>
-
+<script>
+    let button = document.getElementsByTagName("button");
+    function click(){
+        alert("you submitted your form");
+    }
+</script>
 </body>
 </html>
