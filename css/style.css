@@ -1,1 +1,32 @@
-/* This is test CSS file */
+/* Style for the button */
+.my-button {
+    /* Button background color */
+    background-color: #007bff;
+    
+    /* Button text color */
+    color: white;
+    
+    /* Add padding around the text inside the button */
+    padding: 10px 20px;
+    
+    /* Round the corners of the button */
+    border-radius: 5px;
+    
+    /* Remove default button styles */
+    border: none;
+    outline: none;
+    
+    /* Add a hover effect */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .my-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Active (clicked) state */
+  .my-button:active {
+    background-color: #003366;
+  }
+  
