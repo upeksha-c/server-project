@@ -25,11 +25,12 @@
         <label for="occupation">Occupation:</label>
         <input type="text" placeholder="Enter your Occupation">
         <br>
-        <button onClick="click()">submit</button>
+        <button onClick="buttonClick(event)">submit</button>
     </form>
 <script>
-    let button = document.querySelector("button");
-    function click(){
+    function buttonClick(event){
+        event.preventDefault();
+       const button=  document.querySelector("button");
         button.innerHTML = "Submitted";
     }
 </script>
