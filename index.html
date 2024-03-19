@@ -3,35 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Testing the repository</title>
 </head>
 <body>
-    <img src="photo.jpg" alt="photo" width="500px">
-    <h1>Welcome to Archana's form..</h1>
-    <h2>Welcome</h2>
-    <form>
-        <label for="firstname">Firstname:</label>
-        <input type="text" placeholder="Enter your first name">
-        <br>
-        <label for="lastname">Lastname:</label>
-        <input type="text" placeholder="Enter your lastname">
-        <br>
-        <label for="phonenumber">Phonenumber:</label>
-        <input type="text" placeholder="Enter your phoe number">
-        <br>
-        <label for="email">EmailId</label>
-        <input type="email" placeholder="Enter your Email Id">
-        <br>
-        <label for="occupation">Occupation:</label>
-        <input type="text" placeholder="Enter your Occupation">
-        <br>
-        <button onClick="click()">submit</button>
-    </form>
-<script>
-    let button = document.querySelector("button");
-    function click(){
-        button.innerHTML = "Submitted";
-    }
-</script>
+    <div>
+        <div class="header">
+            <img src="photos/brain_game-removebg-preview.png" width="30%" alt="logo">
+        </div>
+        <div class="nav">
+            <button>Log in</button>
+            <button>Sign in</button>
+        </div>
+        <div class="content">
+                <img src="photos/light-removebg-preview.png" class="photo" width="40%" alt=""> 
+                <p>Welcome to one of the greatest social quiz games.Quizzify is available on iOS, Android and every modern browser. It is fast-paced, free and even more fun than zero gravity! &#128521;</p>
+            <img src="photos/images-removebg-preview.png" class="online_quiz" width="50%" alt="">
+            <button class="click_me">Start Quiz Here</button>
+        </div>
+    </div>
+
 </body>
 </html>
