@@ -1,7 +1,7 @@
 body{
   font-family:"Roboto", sans-serif;
-  background-color:#274528 ;
-  color: white;
+  background-color:white;
+  color: black;
   margin-right: 2%;
   margin-left: 2%;
 }
@@ -10,7 +10,8 @@ body{
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: rgb(195, 195, 14);
+  background-color: gray;
+  background-color: rgb(201, 215, 221);
   text-align: center;
   border-radius: 10px;
 }
@@ -20,25 +21,30 @@ body{
   justify-content: space-around;
 }
 button{
-  background-color:blueviolet ;
+  background-color:rgb(201, 215, 221) ;
   padding: 3%;
   font-size: larger;
   border-radius: 10px;
-  color: wheat;
+  color: black;
+  font-weight: 500;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .content{
-  margin-top: 10%;
+  margin-top: 15%;
 }
 .photo{
   top: 2%;
   float: inline-end;
   
 }
-p{
+.para{
  font: 100;
  font-family: sans-serif;
- text-align: center;
+ text-align: justify;
+ margin: 4%;
+ overflow: hidden;
+ 
 }
 .online_quiz{
   margin-top: 4%;
@@ -48,5 +54,83 @@ p{
   float: inline-end;
   margin-top: 15%;
   margin-right: 10%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.card{
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-bottom: 10%;
+  z-index: -1;
+}
+
+
+.popular_content{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}
+
+.foot-panel1{
+  background-color: rgb(201, 215, 221);
+  color: black;
+  padding-top: 2.5%;
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+.footer{
+  border-top: black;
+  background-color: rgb(204, 211, 202);
+  color: black;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 1px;
+  text-align: center;
+  
+}
+
+.content_p{
+  margin-top: 16%;
+  font-size: x-large;
+  text-align: center;
+}
+
+@media (max-width: 390px) {
+  p{
+    font-size: small;
+    font-family: sans-serif;
+    text-align: center;
+    overflow: hidden;
+    z-index: -1;
+   }
+   .foot-panel1{
+    background-color: rgb(201, 215, 221);
+    color: black;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.5rem;
+    font-weight: 200;
+    border-radius: 10px;
+  }
+  
+  .footer{
+    border-top: black;
+    background-color: rgb(204, 211, 202);
+    color: black;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 1px;
+    text-align: center;
+    
+  }
+  }
+
 
