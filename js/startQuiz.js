@@ -27,17 +27,29 @@ function startQuiz(){
     getQuestions();
 }
 
-function createSubmitButton(div,answerArray){
-    //Add submit button
+function createSubmitButton(div, answerArray) {
+    // Add submit button
     let submitButton = document.createElement('button');
-    submitButton.innerHTML = "SUBMIT";
-    div.appendChild(submitButton);
+    submitButton.innerHTML = "Check my score!";
+    submitButton.className = "btn btn-primary"; // Add Bootstrap classes
+    let buttonDiv = document.createElement('div');
+    buttonDiv.className = "text-center"; // Center the button
+    buttonDiv.appendChild(submitButton);
+    div.appendChild(buttonDiv);
 
-    //Add an evenListener to catch submit
-    submitButton.addEventListener("click",function(){
+    // Add an eventListener to catch submit
+    submitButton.addEventListener("click", function submitClicked() {
         let userAnswerArr = getUserAnswers(answerArray);
-        let result = checkScore(answerArray,userAnswerArr);
-        div.appendChild(printScore(result,answerArray));     
+        let result = checkScore(answerArray, userAnswerArr);
+
+        // Remove the event listener to prevent multiple submissions
+        submitButton.removeEventListener("click", submitClicked);
+
+        // Clear the questions and radio buttons
+        div.innerHTML = "";
+
+        // Display the score
+        div.appendChild(printScore(result, answerArray));
     });
 }
 
@@ -70,13 +82,30 @@ function checkScore(answerArr,myAnswerArr){
     return score;
 }
     
-function printScore(score,answerArray){
-    //add new element and write there score details
+function printScore(score, answerArray) {
+    // Create a new div for the score
     let resultDiv = document.createElement('div');
-    //firstDiv.appendChild(resultDiv);
-    let statement = document.createElement('h3');
-    statement.innerHTML = `YOUR SOCRE ${score}/${answerArray.length}`;
-    resultDiv.appendChild(statement);
+    resultDiv.className = "d-flex flex-column justify-content-center align-items-center vh-100"; 
+
+    // Create a square box with background color
+    let scoreBox = document.createElement('div');
+    scoreBox.className = "score-box";
+    
+    // Create "YOUR SCORE IS" text in a div
+    let scoreTextDiv = document.createElement('div');
+    scoreTextDiv.className = "text-center"; // Center the text horizontally
+    scoreTextDiv.innerHTML = "<p>YOUR SCORE IS</p>";
+    scoreBox.appendChild(scoreTextDiv);
+
+    // Create score text in a div
+    let scoreValueDiv = document.createElement('div');
+    scoreValueDiv.className = "text-center"; // Center the text horizontally
+    scoreValueDiv.innerHTML = `<h2>${score}/${answerArray.length}</h2>`;
+    scoreBox.appendChild(scoreValueDiv);
+
+    // Add the square box to the resultDiv
+    resultDiv.appendChild(scoreBox);
+
     return resultDiv;
 }
 
