@@ -1,8 +1,9 @@
 body {
-    background-color: #a6dabe; /* Light green background color */
+    background-color: #a6dabe; 
     margin: 0;
     padding: 0;
 }
+
 .content {
     display: flex;
     flex-direction: column;
@@ -11,13 +12,82 @@ body {
     height: 100vh;
 }
 
-.content p {
-    margin-bottom: 100px; 
-}
-
 .score-box {
     background-color: #f8d7da; 
     padding: 40px;
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* New styles for questionDiv */
+.questionDiv {
+    background-color: #e6e6e6; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto; 
+    width: 70%; 
+    text-align: center; 
+}
+
+/* New styles for answer buttons */
+.option {
+    background-color: #e6e6e6; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 10px auto; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    width: 30%; 
+}
+
+.option:hover {
+    background-color: #d3d3d3; 
+}
+
+/* New styles for result prompt */
+.resultPrompt {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+    width: 70%; 
+    margin: 20px auto; 
+}
+
+/* New styles for NEXT button */
+.nextButton {
+    margin-top: 20px;
+    display: block;
+    margin: 20px auto; 
+    width: 20%; 
+}
+
+/* New styles for correct answer */
+.correctAnswer {
+    background-color: #28a745; 
+    color: #fff;
+}
+
+/* New styles for incorrect answer */
+.incorrectAnswer {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* styles for score box */
+.scoreBox {
+    background-color: #007bff; 
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%; 
+    text-align: center; 
+    font-size: 24px;
 }
