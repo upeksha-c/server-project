@@ -1,19 +1,62 @@
-//crete comments for all the functions
+//crete comments for all functions
+//insert categories to dropdown 
+let selectedCategory = '';
+let startBtn = document.querySelector('.btn.btn-primary')
+//disable start button till select a category
+startBtn.disabled = true
+let cateDiv = document.querySelector('.category')
+let dropdown = document.createElement('select')
+dropdown.className = 'dropdown'
+dropdown.id = 'category'
+dropdown.name = 'category'
+cateDiv.appendChild(dropdown)
+
+//create a function to create options
+function createCategoryOption(value){
+    let op = document.createElement('option')
+    op.value = value
+    op.innerHTML = value
+    return op
+}
+
+const BACKEND_URL_CATEGORY = "http://localhost:3001/categories"
+
+//fetch categories from backend and assign to another fuction to create dropdown options
+const getCategoriesBackend = async(url) => {
+    try {
+        const response = await fetch(url);
+        const json = await response.json();
+        json.forEach((element) =>dropdown.appendChild(createCategoryOption(element.category)))
+
+    } catch (error) {
+        alert("Error retrieving questions: " + error.message);
+    }
+}
+getCategoriesBackend(BACKEND_URL_CATEGORY)
+
+//add an event listner to enable start button
+dropdown.addEventListener('change',function(){
+    if(dropdown.value){
+        startBtn.disabled = false
+        selectedCategory = dropdown.value;
+    }
+})
 
 // This function is called when the user clicks on the "Start Quiz" button
 function startQuiz() {
+
     document.querySelector("div").remove();
     const body = document.querySelector("body");
     const firstDiv = document.createElement("div");
     body.appendChild(firstDiv);
 
-    const BACKEND_URL = "http://localhost:3001/";
+    const BACKEND_URL = "http://localhost:3001/questions?category=" + selectedCategory;
     let answerArray = [];
     let currentElement = 0;
     let score = 0;
     let usersAnswerArray = [];
 
-    // This function fetches the questions from the backend and displays the first question
+    // This function fetches the questions from the backend and display questions
     const getQuestionsFromBackend = async (url) => {
         try {
             const response = await fetch(url);
