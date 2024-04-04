@@ -7,8 +7,8 @@ POST http://localhost:3001/user/login
 Content-Type: application/json
     
 {
-        "email": "admin@info.com",
-        "password": "admin11"
+        "email": "glory@info.com",
+        "password": "glory123"
 }
 
 ### Login with invalid credentials
