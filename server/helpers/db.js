@@ -17,7 +17,7 @@ const openDb = () => {
     user: "postgres",
     host: "localhost",
     database: "usersAccount",
-    password: "Gliffy",
+    password: "Gliffy",  // Change this to your own database password
     port: 5432
   })
   return pool

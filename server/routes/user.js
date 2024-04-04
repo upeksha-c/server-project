@@ -37,8 +37,8 @@ userRouter.post("/register",async(req,res) => {
     bcrypt.hash(req.body.password,10,async (err,hash) => {
       if (!err) {
         try {
-          const sql = "insert into userinfo (email, password) values ($1,$2) returning id"
-          const result = await query(sql,[req.body.email,hash])
+          const sql = "insert into userinfo (firstname, lastname, phone, email, password) values ($1,$2,$3,$4,$5) returning id"
+          const result = await query(sql,[req.body.firstname,req.body.lastname,req.body.phone,req.body.email,hash])
           res.status(200).json({id: result.rows[0].id}) 
         } catch (error) {
           res.statusMessage = error
