@@ -10,6 +10,7 @@ const last_name_input = document.querySelector('#lastname');
 const phone_input = document.querySelector('#phone');
 const email_input = document.querySelector('#email');
 const password_input = document.querySelector('#password');
+const confirm_password_input = document.querySelector('#confirm-password');
 
 // Add event listener to the signup button
 document.querySelector('#register-button').addEventListener('click', (event) => {
@@ -21,11 +22,15 @@ document.querySelector('#register-button').addEventListener('click', (event) => 
   const phone = phone_input.value;
   const email = email_input.value;
   const password = password_input.value;
+  const confirmPassword = confirm_password_input.value;
   
-
+  if (password !== confirmPassword) {
+    alert('Passwords do not match');
+    return;
+}
 
   // Attempt to register the user using the provided credentials
-  user.register(firstname, lastname, phone, email, password).then(user => {
+  user.register(firstname, lastname, phone, email, password, confirmPassword).then(user => {
       // If registration is successful, redirect to the login page
       window.location.href = "login.html";
     })
