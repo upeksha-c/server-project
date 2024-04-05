@@ -11,4 +11,3 @@ create table userinfo (
 
 
 
-insert into userinfo (firstname, lastname, phone, email, password) values ('Ben', 'din', '1234567890','admin@info.com', 'admin11');  

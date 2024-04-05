@@ -1,5 +1,5 @@
 const express = require('express')
-const { query } = require('../helpers/db.js')
+const { query } = require('../helpers/logindb.js')
 const bcrypt = require('bcrypt')
 
 const userRouter = express.Router()
