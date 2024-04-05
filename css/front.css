@@ -95,6 +95,9 @@ h1{
     color: white;
 
 }
+.btn1 a{
+    color: white !important;
+}
 
 /*Popular content part*/
 /*style for heading part*/
@@ -127,6 +130,7 @@ h1{
 #btn1{
     background-color:rgb(46, 111, 191);
     border-radius: 7%;
+    
 }
 /*hover effect for join quiz here part*/
 #btn1:hover{
