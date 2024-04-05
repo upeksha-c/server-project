@@ -9,15 +9,6 @@ CREATE TABLE questions (
     correct_answer VARCHAR(255) NOT NULL
 );
 
-create table users(
-	id_user SMALLINT PRIMARY KEY AUTO_INCREMENT,
-    firstname VARCHAR(255)NOT NULL,
-    lastname VARCHAR(255)NOT NULL,
-    age SMALLINT,
-    email VARCHAR(255)NOT NULL,
-    paasword VARCHAR(100)NOT NULL
-)Engine=InnoDB;
-
 INSERT INTO questions(question, category, options, correct_answer) 
 VALUES ('What does ICT stand for?', 'ICT', '{"International Computer Technology", "Internet Connection Terminal", "Information Communication Technology", "Integrated Circuit Technology"}', 'Information Communication Technology');
 
