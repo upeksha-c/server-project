@@ -8,10 +8,10 @@
 body {
     display: grid !important;
     place-items: center !important;
-   /* background: #f1f1f1 !important;*/
-   font-family: "Roboto", sans-serif !important;
-  font-weight: 400 !important;
-  font-style: normal !important;
+    /* background: #f1f1f1 !important;*/
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
 }
 .navbar{
     margin-top: 2%;
