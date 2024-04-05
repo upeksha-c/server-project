@@ -1,0 +1,29 @@
+### Login with valid credentials
+POST http://localhost:3001/user/login
+Content-Type: application/json
+    
+{
+        "email": "admin@fo.com",
+        "password": "admin123"
+}
+
+### Login with invalid credentials
+POST http://localhost:3001/user/login
+Content-Type: application/json
+    
+{
+        "email": "admin@foo.com",
+        "password": "admin"
+}
+
+### Register a new user
+POST http://localhost:3001/user/register
+Content-Type: application/json
+    
+{
+        "firstname": "glory",
+        "lastname": "doe",
+        "phone": "1234567890",
+        "email": "admin@fo.com",
+        "password": "admin123"
+}
