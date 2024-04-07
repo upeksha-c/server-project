@@ -109,22 +109,32 @@ h1{
 }
 /*style for carousel effect to slide the content*/
 .carousel-inner{
-    padding: 2em;
+    /* padding: 2em; */
     border-radius: 3% !important;
 }
 .carousel-control-prev, .carousel-control-next{
     background-color: #565050;
-    width: 6vh;
-    height: 6vh;
+    /* width: 6vh;
+    height: 6vh; */
+    
     border-radius:50%;
-    top: 50%;
-    transform: translateY(-50%);
+    /* top: 50%; */
+    /* transform: translateX(); */
+}
+
+.carousel-control-next {
+    right: -10% !important;
+}
+
+.carousel-control-prev {
+    left: -10%  !important;
 }
 
 .carousel-control-prev span,
 .carousel-control-next span{
-    width: 1.5rem;
-    height: 1.5rem;
+    /* width: 1.5rem;
+    height: 1.5rem; */
+    
 }
 
 #btn1{
