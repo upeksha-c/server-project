@@ -21,7 +21,7 @@ document.querySelector('#login-button').addEventListener('click', (event) => {
         .then(user => {
             // If login is successful, display a success message and redirect to the index page
             alert('Login successful');
-            window.location.href = "index.html";
+            window.location.href = "startQuiz.html";
         })
         .catch(error => {
             // If login fails, display an error message
