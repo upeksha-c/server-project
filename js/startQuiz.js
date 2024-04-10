@@ -167,22 +167,11 @@ function startQuiz() {
         return nextDiv;
     };
 
-    // This function displays the score box
+    // Function to display the score box
     const displayScoreBox = (score, totalQuestions) => {
-        firstDiv.innerHTML = ""; 
-        const scoreBox = createScoreBox(score, totalQuestions);
-        firstDiv.appendChild(scoreBox);
-    };
-
-    // This function creates the score box
-    const createScoreBox = (score, totalQuestions) => {
-        const scoreBox = document.createElement('div');
-        scoreBox.className = "scoreBox";
-        const scoreText = document.createElement('h3');
-        scoreText.innerHTML = `YOUR SCORE: ${score}/${totalQuestions}`;
-        scoreBox.appendChild(scoreText);
-        return scoreBox;
-    };
+    // Redirect to score.html with score as query parameter
+    window.location.href = `score.html?score=${score}&totalQuestions=${totalQuestions}`;
+};
 
     // Start the quiz
     getQuestionsFromBackend(BACKEND_URL);
