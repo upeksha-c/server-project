@@ -6,7 +6,7 @@ const questionsRouter = express.Router()
 questionsRouter.get("/questions",async(req,res) => {
     try{
         const category = req.query.category; 
-        const code = 'SELECT * FROM questions WHERE category = $1 order by random() LIMIT 10'; 
+        const code = 'SELECT * FROM questions WHERE id_category =(SELECT id_category FROM categories WHERE cate_name = $1) order by random() LIMIT 10'; 
         const result = await query(code, [category]);
         const rows = result.rows ? result.rows : []
         res.status(200).json(rows)
