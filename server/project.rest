@@ -2,3 +2,5 @@
 GET http://localhost:3001/questions
 ### Get posts
 GET http://localhost:3001/categories
+### Get posts
+GET http://localhost:3001/carousel
