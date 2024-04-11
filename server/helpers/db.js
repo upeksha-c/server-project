@@ -17,7 +17,7 @@ const openDb = () => {
         host : 'localhost',
         database : 'quizzify',
         password : 'Gliffy',
-        port : 5433
+        port : 5432
     })
     return pool
 }
