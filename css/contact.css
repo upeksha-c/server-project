@@ -1,0 +1,47 @@
+
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
+
+
+body {
+  
+    font-family: "Roboto", sans-serif !important;
+    font-size: 14px;
+    line-height: 1.42857;
+    height: 350px;
+    padding: 0;
+    margin: 0;
+}
+.navbar{
+    margin-top: 2%;
+    
+}
+
+/*style for QUIZZYFY*/
+.navbar-brand{ /*logo*/
+    color: white !important;
+    font-size: xx-large !important;
+    font-weight: 500;
+    margin-left: 30px;
+    text-shadow: 2px 2px 4px rgb(40, 72, 113);
+    background-color:rgb(46, 111, 191) !important ;
+    border-radius: 50%;
+    padding: 2%;
+}
+/*style for navbar links*/
+.nav-link{
+    /*color: #c200ff !important;*/
+    color:rgb(46, 111, 191) !important;
+    font-size:x-large !important;
+    margin-left: 30px;
+}
+
+/*style by using some hover in nav link*/
+.nav-link:hover{
+    background-color: rgb(46, 111, 191);
+    border-radius: 8px;
+    color: white !important;
+}
+
+#h1{
+    font-weight: 400;
+}

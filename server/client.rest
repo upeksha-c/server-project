@@ -27,3 +27,13 @@ Content-Type: application/json
         "email": "admin@fo.com",
         "password": "admin123"
 }
+
+### Feedback
+POST http://localhost:3001/feedback
+Content-Type: application/json
+    
+{
+        "Full_Name": "Glory Doe",
+        "Email": "Glory@gmail.com",
+        "feedback_text": "I love these quizez"
+}
