@@ -55,6 +55,7 @@ function startQuiz() {
     let currentElement = 0;
     let score = 0;
     let usersAnswerArray = [];
+    let questionArray = [];
 
     // This function fetches the questions from the backend and display questions
     const getQuestionsFromBackend = async (url) => {
@@ -62,7 +63,8 @@ function startQuiz() {
             const response = await fetch(url);
             const json = await response.json();
             answerArray = json.map((element) => element.correct_answer);
-            displayQuestion(json[currentElement]);
+            questionArray = json.map((element) => element)
+            displayQuestion(questionArray[currentElement]);
         } catch (error) {
             alert("Error retrieving questions: " + error.message);
         }
@@ -160,7 +162,7 @@ function startQuiz() {
             if (currentElement === answerArray.length) {
                 displayScoreBox(score, answerArray.length);
             } else {
-                getQuestionsFromBackend(BACKEND_URL);
+                displayQuestion(questionArray[currentElement]);
             }
         });
         nextDiv.appendChild(nextButton);
