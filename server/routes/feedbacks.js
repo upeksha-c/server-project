@@ -1,5 +1,5 @@
 const express = require('express') //imports the Express.js framework
-const { query } = require('../helpers/feedbackDb.js') //imports the query from feedbackDb.js which is in helpers folder
+const { query } = require('../helpers/db.js') //imports the query from db.js which is in helpers folder
 
 const fbRouter = express.Router() //handle routing for the feedback-related endpoints
 
