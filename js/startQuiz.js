@@ -26,7 +26,7 @@ const getCategoriesBackend = async(url) => {
     try {
         const response = await fetch(url);
         const json = await response.json();
-        json.forEach((element) =>dropdown.appendChild(createCategoryOption(element.category)))
+        json.forEach((element) =>dropdown.appendChild(createCategoryOption(element.cate_name)))
 
     } catch (error) {
         alert("Error retrieving questions: " + error.message);
