@@ -4,7 +4,6 @@ const feedbackinstance = new Feedback()
 
 // Select all star icons
 const stars = document.querySelectorAll('.fa-star');
-const submitButton = document.querySelector('.btnFeedback');
 
 // Add click event listener to each star
 stars.forEach(function(star) {
@@ -22,11 +21,13 @@ stars.forEach(function(star) {
   });
 });
 
+
 console.log(feedbackinstance);
 // Select feedback section input
 const FullName = document.querySelector('#FullName');
 const Email = document.querySelector('#Email');
 const feedbackArea = document.querySelector('#feedbackArea');
+//const rating = document.querySelectorAll('.far fa-star');
 
 
 // Add event listener to the Submit button
@@ -37,16 +38,34 @@ document.querySelector('.btnFeedback').addEventListener('click', (event) => {
   const Fullname = FullName.value;
   const email = Email.value;
   const feedback = feedbackArea.value;
+
+   // Get the star rating
+   const filledStars = document.querySelectorAll('.fas.fa-star');
+   const Satisfaction_rating = filledStars.length;
+
+  //take only email type dataa
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert('Please enter a valid email address.');
+    Email.value = ''; // Clear the email field after showing alert
+    return;
+  }
   
   // Attempt to submit
-  feedbackinstance.feedbackSection(Fullname, email, feedback).then(user => {
+  feedbackinstance.feedbackSection(Fullname, email, feedback, Satisfaction_rating).then(user => {
      // If submission is successful, show the submitted alert
-     alert("Thank You for submitting Feedback");
+     alert("Thank you for submitting Feedback 😊");
 
      // Clear the input fields
      FullName.value = '';
      Email.value = '';
      feedbackArea.value = '';
+
+      // Make the stars appear empty
+      filledStars.forEach(star => {
+        star.classList.remove('fas');
+        star.classList.add('far');
+      });
 
    })
    .catch(error => {
@@ -55,14 +74,4 @@ document.querySelector('.btnFeedback').addEventListener('click', (event) => {
    });
 });
 
-
-// Add click event listener to the submit button
-//submitButton.addEventListener('click', function(event){
-  // Prevent the form from submitting
-  /*event.preventDefault();
-  const newDiv = document.createElement('div');
-  newDiv.innerHTML = "Thank you for submitting Feedback 😊";*/
-  // Append the new div to the form
-  //document.querySelector('form').appendChild(newDiv);
-//});
  

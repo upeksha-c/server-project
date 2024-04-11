@@ -33,7 +33,9 @@ POST http://localhost:3001/feedback
 Content-Type: application/json
     
 {
-        "Full_Name": "Glory Doe",
-        "Email": "Glory@gmail.com",
-        "feedback_text": "I love these quizez"
+        "Full_Name": "Hikko Doe",
+        "Email": "Hikko@gmail.com",
+        "feedback_text": "I love the content",
+        "Satisfaction_rating": "5"
+
 }
