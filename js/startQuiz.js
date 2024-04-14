@@ -1,51 +1,52 @@
-//crete comments for all functions
-//insert categories to dropdown 
+// Create comments for all functions
+// Insert categories to dropdown 
 let selectedCategory = '';
-let startBtn = document.querySelector('.btn.btn-primary')
-//disable start button till select a category
-startBtn.disabled = true
-let cateDiv = document.querySelector('.category')
-let dropdown = document.createElement('select')
-dropdown.className = 'dropdown'
-dropdown.id = 'category'
-dropdown.name = 'category'
-cateDiv.appendChild(dropdown)
+let startBtn = document.querySelector('.btn.btn-primary');
+// Disable start button till select a category
+startBtn.disabled = true;
+let cateDiv = document.querySelector('.category');
+let dropdown = document.createElement('select');
+dropdown.className = 'dropdown';
+dropdown.id = 'category';
+dropdown.name = 'category';
+cateDiv.appendChild(dropdown);
 
-//create a function to create options
-function createCategoryOption(value){
-    let op = document.createElement('option')
-    op.value = value
-    op.innerHTML = value
-    return op
+// Create a function to create options
+function createCategoryOption(value) {
+    let op = document.createElement('option');
+    op.value = value;
+    op.innerHTML = value;
+    return op;
 }
 
-const BACKEND_URL_CATEGORY = "http://localhost:3001/categories"
+const BACKEND_URL_CATEGORY = "http://localhost:3001/categories";
 
-//fetch categories from backend and assign to another fuction to create dropdown options
+// Fetch categories from backend and assign to another function to create dropdown options
 const getCategoriesBackend = async(url) => {
     try {
         const response = await fetch(url);
         const json = await response.json();
-        json.forEach((element) =>dropdown.appendChild(createCategoryOption(element.cate_name)))
+        json.forEach((element) => dropdown.appendChild(createCategoryOption(element.cate_name)));
 
     } catch (error) {
         alert("Error retrieving questions: " + error.message);
     }
 }
-getCategoriesBackend(BACKEND_URL_CATEGORY)
+getCategoriesBackend(BACKEND_URL_CATEGORY);
 
-//add an event listner to enable start button
-dropdown.addEventListener('change',function(){
-    if(dropdown.value){
-        startBtn.disabled = false
+// Add an event listener to enable start button
+dropdown.addEventListener('change', function() {
+    if (dropdown.value) {
+        startBtn.disabled = false;
         selectedCategory = dropdown.value;
     }
-})
+});
 
 // This function is called when the user clicks on the "Start Quiz" button
 function startQuiz() {
+    const content = document.querySelector(".content");
+    content.style.display = "none"; // Hide the content
 
-    document.querySelector("div").remove();
     const body = document.querySelector("body");
     const firstDiv = document.createElement("div");
     body.appendChild(firstDiv);
@@ -57,13 +58,13 @@ function startQuiz() {
     let usersAnswerArray = [];
     let questionArray = [];
 
-    // This function fetches the questions from the backend and display questions
-    const getQuestionsFromBackend = async (url) => {
+    // This function fetches the questions from the backend and displays questions
+    const getQuestionsFromBackend = async(url) => {
         try {
             const response = await fetch(url);
             const json = await response.json();
             answerArray = json.map((element) => element.correct_answer);
-            questionArray = json.map((element) => element)
+            questionArray = json.map((element) => element);
             displayQuestion(questionArray[currentElement]);
         } catch (error) {
             alert("Error retrieving questions: " + error.message);
@@ -151,29 +152,31 @@ function startQuiz() {
         firstDiv.appendChild(createNextButtonElement());
     };
 
-    // This function creates the next button
-    const createNextButtonElement = () => {
-        const nextDiv = document.createElement('div');
-        const nextButton = document.createElement('button');
-        nextButton.className = "btn btn-primary nextButton";
-        nextButton.innerHTML = "NEXT";
-        nextButton.addEventListener("click", function() {
-            currentElement++;
-            if (currentElement === answerArray.length) {
-                displayScoreBox(score, answerArray.length);
-            } else {
-                displayQuestion(questionArray[currentElement]);
-            }
-        });
-        nextDiv.appendChild(nextButton);
-        return nextDiv;
-    };
+  // This function creates the next button
+const createNextButtonElement = () => {
+    const nextButtonContainer = document.createElement('div');
+    nextButtonContainer.className = "nextButtonContainer"; // Adding a class for styling
+    const nextButton = document.createElement('button');
+    nextButton.className = "btn btn-primary nextButton";
+    nextButton.innerHTML = "NEXT";
+    nextButton.addEventListener("click", function() {
+        currentElement++;
+        if (currentElement === answerArray.length) {
+            displayScoreBox(score, answerArray.length);
+        } else {
+            displayQuestion(questionArray[currentElement]);
+        }
+    });
+    nextButtonContainer.appendChild(nextButton);
+    return nextButtonContainer;
+};
+
 
     // Function to display the score box
     const displayScoreBox = (score, totalQuestions) => {
-    // Redirect to score.html with score as query parameter
-    window.location.href = `score.html?score=${score}&totalQuestions=${totalQuestions}`;
-};
+        // Redirect to score.html with score as query parameter
+        window.location.href = `score.html?score=${score}&totalQuestions=${totalQuestions}`;
+    };
 
     // Start the quiz
     getQuestionsFromBackend(BACKEND_URL);
