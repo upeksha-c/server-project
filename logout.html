@@ -34,7 +34,7 @@
                 <a class="nav-link" href="#">My Quizzes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="contact.html">Contact</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
@@ -45,22 +45,17 @@
       </nav>
 </div>
 
-  <div class="container" id="container1">
+<div class="container">
     <div class="row">
-      <div class="col-md-8" id="login">
-        <h3>Login</h3><br>
-        <form>
-            <label for="user-email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Type email"><br>
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Type password"><br>
-          <button type="submit" class="btn btn-primary" id="login-button">Submit</button>
-        </form><br>
-        <p>Do not have account yet? <a href="register.html">register here</a></p>
+      <div class="col-md-8">
+        <p>You have logged out</p>
+        <!--redirects user to log in page-->
+        <p>Do you want to login again? <a href="login.html"></a></p>     
+        <button type="submit" class="btn btn-primary" id="login-button" onclick="window.location.href='login.html'">Login</button>
       </div>
     </div>
   </div>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script type="module" src="./js/login.js"></script>
+  <script type="module" src="./js/logout.js"></script>
 </body>
 </html>
