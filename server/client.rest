@@ -1,10 +1,24 @@
+###Get all users
+GET http://localhost:3001/user
+
+
+
+### Get user data
+GET http://localhost:3001/user/profile/46
+Content-Type: application/json
+    
+
+###Get user profile by id
+GET http://localhost:3001/user/profile/8
+
+
 ### Login with valid credentials
 POST http://localhost:3001/user/login
 Content-Type: application/json
     
 {
         "email": "admin@fo.com",
-        "password": "admin123"
+        "password": "admin1110"
 }
 
 ### Login with invalid credentials
@@ -21,11 +35,25 @@ POST http://localhost:3001/user/register
 Content-Type: application/json
     
 {
-        "firstname": "glory",
-        "lastname": "doe",
-        "phone": "1234567890",
-        "email": "admin@fo.com",
-        "password": "admin123"
+        "firstname": "gleo8ria",
+        "lastname": "bediko",
+        "phone": "1234578090",
+        "email": "admin@f8oodi.gom",
+        "password": "admin281110"
+}
+
+
+
+### Update user profile
+PUT http://localhost:3001/user/profile/?id=46
+Content-Type: application/json
+    
+{
+        "firstname": "jane",
+        "lasname": "joy",
+        "phone" : "1234567899",
+        "email": "ggg@gg.com"
+
 }
 
 ### Feedback

@@ -1,10 +1,12 @@
 // Import the User class from the User module
 import { User } from "./class/Userinfo.js";
 
+
 // Create a new instance of the User class
 const user = new User();
 console.log(user);
-// Select email and password input fields
+
+// Select input fields
 const first_name_input = document.querySelector('#firstname');
 const last_name_input = document.querySelector('#lastname');
 const phone_input = document.querySelector('#phone');
@@ -13,10 +15,10 @@ const password_input = document.querySelector('#password');
 const confirm_password_input = document.querySelector('#confirm-password');
 
 // Add event listener to the signup button
-document.querySelector('#register-button').addEventListener('click', (event) => {
+document.querySelector('#register-button').addEventListener('click', async (event) => {
   event.preventDefault();
 
-  // Retrieve email and password from input fields
+  // Retrieve user input
   const firstname = first_name_input.value;
   const lastname = last_name_input.value;
   const phone = phone_input.value;
@@ -24,19 +26,40 @@ document.querySelector('#register-button').addEventListener('click', (event) => 
   const password = password_input.value;
   const confirmPassword = confirm_password_input.value;
   
+  // Check if passwords match
   if (password !== confirmPassword) {
     alert('Passwords do not match');
     return;
-}
+  }
 
-  // Attempt to register the user using the provided credentials
-  user.register(firstname, lastname, phone, email, password, confirmPassword).then(user => {
-      // If registration is successful, redirect to the login page
-      window.location.href = "login.html";
-    })
-    .catch(error => {
-      // If registration fails, display an error message
-      alert(error);
-    });
+  try {
+    // Attempt to register the user using the provided credentials
+    await user.register(firstname, lastname, phone, email, password, confirmPassword);
+    
+    // If registration is successful, redirect to the login page
+    window.location.href = "login.html";
+  } catch (error) {
+    // If registration fails, display an error message
+    alert(error);
+  }
 });
- 
+
+// Add event listener to the form submission
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault(); // Prevent HTML refresh
+  const formData = new FormData(form); 
+  const data = Object.fromEntries(formData);
+  console.log(data);
+
+  const json = JSON.stringify(data);
+  sessionStorage.setItem('form', json);
+
+  console.log(json);
+
+  const retrievedData = localStorage.getItem('data');
+  console.log(retrievedData);
+
+  // Redirect to the user profile page
+  window.location.href = "userprofile.html";
+});

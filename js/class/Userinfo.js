@@ -1,4 +1,5 @@
-import { BACKEND_URL } from "../config.js"
+//backend url
+const BACKEND_URL = 'http://localhost:3001';
 
 class User {
   #id = undefined
@@ -16,6 +17,7 @@ class User {
       this.#lastname = userObject.lastname
       this.#phone = userObject.phone
       this.#email = userObject.email
+      
     }
   }
 
@@ -43,6 +45,8 @@ class User {
     return this.#id !== undefined ? true : false
   }
 
+
+ 
   async login(email,password) {
     const data = JSON.stringify({email: email, password: password})
     const response = await fetch(BACKEND_URL + '/user/login',{
@@ -55,7 +59,25 @@ class User {
       console.log(json)
       this.#id = json.id
       this.#email = json.email
+      this.#firstname = json.firstname
+      this.#lastname = json.lastname
+      this.#phone = json.phone
       sessionStorage.setItem('user',JSON.stringify(json))
+      return this
+    } else {
+      throw response.statusText
+      }
+  }
+
+  //get profile 
+  async getProfile() {
+    const response = await fetch(BACKEND_URL + '/user/profile?id=' + this.#id)
+    if (response.ok === true) {
+      const json = await response.json()
+      this.#firstname = json.firstname
+      this.#lastname = json.lastname
+      this.#phone = json.phone
+      this.#email = json.email
       return this
     } else {
       throw response.statusText
@@ -77,6 +99,21 @@ class User {
     }
   }
 
+  async fetchUserInfo() {
+    const response = await fetch(BACKEND_URL + '/user/profile?id=' + this.#id)
+    if (response.ok === true) {
+      const json = await response.json()
+      this.#firstname = json.firstname
+      this.#lastname = json.lastname
+      this.#phone = json.phone
+      this.#email = json.email
+      return this
+    } else {
+      throw response.statusText
+    }
+  }
+
+
   logout() {
     this.#id = undefined
     this.#firstname = undefined
@@ -86,6 +123,8 @@ class User {
     sessionStorage.removeItem('user')
   }
 
-}
+ 
+  }
+
 
 export { User }
