@@ -1,6 +1,8 @@
 // Create comments for all functions
 // Insert categories to dropdown 
 let selectedCategory = '';
+let selectedOptionId = 0;
+
 let startBtn = document.querySelector('.btn.btn-primary');
 // Disable start button till select a category
 startBtn.disabled = true;
@@ -12,10 +14,11 @@ dropdown.name = 'category';
 cateDiv.appendChild(dropdown);
 
 // Create a function to create options
-function createCategoryOption(value) {
+function createCategoryOption(value, id) {
     let op = document.createElement('option');
     op.value = value;
     op.innerHTML = value;
+    op.id = id;
     return op;
 }
 
@@ -26,7 +29,7 @@ const getCategoriesBackend = async(url) => {
     try {
         const response = await fetch(url);
         const json = await response.json();
-        json.forEach((element) => dropdown.appendChild(createCategoryOption(element.cate_name)));
+        json.forEach((element) => dropdown.appendChild(createCategoryOption(element.cate_name,element.id_category)));
 
     } catch (error) {
         alert("Error retrieving questions: " + error.message);
@@ -39,6 +42,11 @@ dropdown.addEventListener('change', function() {
     if (dropdown.value) {
         startBtn.disabled = false;
         selectedCategory = dropdown.value;
+
+        // Get the selected option element
+        let selectedOption = dropdown.options[dropdown.selectedIndex];
+        // Get the ID of the selected option
+        selectedOptionId = selectedOption.id;
     }
 });
 
@@ -162,7 +170,7 @@ const createNextButtonElement = () => {
     nextButton.addEventListener("click", function() {
         currentElement++;
         if (currentElement === answerArray.length) {
-            displayScoreBox(score, answerArray.length);
+            displayScoreBox(score, answerArray.length, selectedOptionId);
         } else {
             displayQuestion(questionArray[currentElement]);
         }
@@ -173,9 +181,9 @@ const createNextButtonElement = () => {
 
 
     // Function to display the score box
-    const displayScoreBox = (score, totalQuestions) => {
+    const displayScoreBox = (score, totalQuestions, category) => {
         // Redirect to score.html with score as query parameter
-        window.location.href = `score.html?score=${score}&totalQuestions=${totalQuestions}`;
+        window.location.href = `score.html?score=${score}&totalQuestions=${totalQuestions}&categoryId=${category}`;
     };
 
     // Start the quiz

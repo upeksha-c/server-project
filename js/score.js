@@ -11,6 +11,8 @@ const getParameterByName = (name, url = window.location.href) => {
 // Get score and totalQuestions from URL
 const score = getParameterByName('score');
 const totalQuestions = getParameterByName('totalQuestions');
+const id_category = getParameterByName('categoryId');
+console.log(id_category)
 
 // Display the score
 const scoreContainer = document.getElementById('container1');
