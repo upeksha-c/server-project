@@ -83,6 +83,10 @@ h1{
     color: rgb(46, 111, 191) !important;
 
 }
+.btn3{
+    background: none !important;
+    color: rgb(46, 111, 191) !important;
+}
 /*style for main content image*/
 .col-md-6 img{
     width: 100%;
