@@ -18,7 +18,7 @@ questionsRouter.get("/questions",async(req,res) => {
 
 questionsRouter.get("/categories",async(req,res) => {
     try{
-        const result = await query('select cate_name, ,id_category from categories')
+        const result = await query('select cate_name, id_category from categories')
         const rows = result.rows ? result.rows : []
         res.status(200).json(rows)
     }catch(error){
