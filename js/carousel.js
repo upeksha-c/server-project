@@ -74,7 +74,7 @@ function createCard(imageSource,cateName,cateDescription){
     let anchor = document.createElement('a')
     anchor.className = 'btn btn-primary'
     anchor.id = 'btn1'
-    anchor.href= '#'
+    anchor.href= "../startQuiz.html"
     anchor.innerHTML = 'Join Quiz Here'
     cardBodyDiv.appendChild(anchor) 
     
