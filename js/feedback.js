@@ -1,6 +1,17 @@
 import { Feedback } from "./class/feedbackClass.js";
+import { User } from "./class/Userinfo.js";
+const user = new User();
 
 const feedbackinstance = new Feedback()
+
+//get id of user
+const userId = user.id
+console.log(userId)
+
+//get user email
+const userEmail = user.email
+console.log(userEmail)
+
 
 // Select all star icons
 const stars = document.querySelectorAll('.fa-star');
