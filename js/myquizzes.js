@@ -1,10 +1,14 @@
+import { User } from "./class/Userinfo.js";
+const user = new User();
+
+//get uer id to a variable
+const userId = user.id;
+
 document.addEventListener('DOMContentLoaded', async () => {
     const quizResultsTable = document.getElementById('quizResults');
 
     try {
-        // Retrieve the user ID from sessionStorage
-        const userId = sessionStorage.getItem('userId');
-
+            
         if (!userId) {
             console.error('User ID not found in sessionStorage');
             return;
