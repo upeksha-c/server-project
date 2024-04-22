@@ -35,7 +35,7 @@ stars.forEach(function(star) {
 
 console.log(feedbackinstance);
 // Select feedback section input
-const FullName = document.querySelector('#FullName');
+const user_Id = document.querySelector('#User_Id');
 const Email = document.querySelector('#Email');
 const feedbackArea = document.querySelector('#feedbackArea');
 //const rating = document.querySelectorAll('.far fa-star');
@@ -46,7 +46,7 @@ document.querySelector('.btnFeedback').addEventListener('click', (event) => {
   event.preventDefault();
 
   // Retrieve feedback data
-  const Fullname = FullName.value;
+  const users_Id = user_Id.value;
   const email = Email.value;
   const feedback = feedbackArea.value;
 
@@ -68,7 +68,7 @@ document.querySelector('.btnFeedback').addEventListener('click', (event) => {
      alert("Thank you for submitting Feedback 😊");
 
      // Clear the input fields
-     FullName.value = '';
+     users_Id.value = '';
      Email.value = '';
      feedbackArea.value = '';
 
