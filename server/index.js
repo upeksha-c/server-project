@@ -6,7 +6,9 @@ const { userRouter } = require('./routes/user.js');
 const { questionsRouter } = require('./routes/questions.js');
 const { fbRouter } = require('./routes/feedbacks.js')
 const { carouselRouter } = require('./routes/carousel.js');
-const { scoreRouter} = require('./routes/score.js')
+const { scoreRouter} = require('./routes/score.js');
+const { contactUsRouter} = require('./routes/contactUs.js')
+
 
 
 
@@ -25,6 +27,7 @@ app.use('/',questionsRouter)
 app.use('/',fbRouter)
 app.use('/',carouselRouter)
 app.use('/',scoreRouter)
+app.use('/',contactUsRouter)
 
 // Default route
 app.get('/', (req, res) => {
