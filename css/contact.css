@@ -1,16 +1,5 @@
 
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
-
-
-body {
-  
-    font-family: "Roboto", sans-serif !important;
-    font-size: 14px;
-    line-height: 1.42857;
-    height: 350px;
-    padding: 0;
-    margin: 0;
-}
 .navbar{
     margin-top: 2%;
     
@@ -42,6 +31,18 @@ body {
     color: white !important;
 }
 
-#h1{
+.col-md-8 h1{
+    font-size: 5rem !important;
+    font-weight: 700;
+}
+.col-md-8 .lead{
+    font-size: 2rem;
+    font-weight: 500;
+
+}
+
+.col-md-8 .lead2{
+    font-size: 1.5rem;
     font-weight: 400;
+
 }
