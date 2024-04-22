@@ -1,12 +1,12 @@
+
 CREATE TABLE feedback (
-    id SERIAL PRIMARY KEY,
-    Full_Name VARCHAR(255),
-    Email VARCHAR(255),
+    id_feedback SERIAL PRIMARY KEY,
+    user_id SMALLINT NOT NULL,
+	Email VARCHAR(255),
     feedback_text TEXT,
+    satisfaction_rating INT,
+    FOREIGN KEY(user_id )
+        REFERENCES userinfo(id)
+        ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
-INSERT INTO feedback (id, Full_Name, Email, feedback_text)
-SELECT id, Full_Name, Email, feedback_text
-FROM feedback;
-
-ALTER TABLE feedback ADD COLUMN Satisfaction_rating INT;

@@ -35,7 +35,7 @@ stars.forEach(function(star) {
 
 console.log(feedbackinstance);
 // Select feedback section input
-const user_Id = document.querySelector('#User_Id');
+const user_Id = document.querySelector('#user_Id');
 const Email = document.querySelector('#Email');
 const feedbackArea = document.querySelector('#feedbackArea');
 //const rating = document.querySelectorAll('.far fa-star');
@@ -63,7 +63,7 @@ document.querySelector('.btnFeedback').addEventListener('click', (event) => {
   }
   
   // Attempt to submit
-  feedbackinstance.feedbackSection(Fullname, email, feedback, Satisfaction_rating).then(user => {
+  feedbackinstance.feedbackSection(users_Id, email, feedback, Satisfaction_rating).then(user => {
      // If submission is successful, show the submitted alert
      alert("Thank you for submitting Feedback 😊");
 

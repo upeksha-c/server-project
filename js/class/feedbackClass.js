@@ -2,7 +2,7 @@ import { BACKEND_URL } from "../config.js"
 
 class Feedback {
     #id = undefined
-    #Full_Name = undefined
+    #user_Id = undefined
     #Email = undefined
     #feedback_text = undefined
     #Satisfaction_rating = undefined
@@ -14,8 +14,8 @@ class Feedback {
     get id(){
       return this.#id
     }
-    get Full_Name() {
-      return this.#Full_Name
+    get user_id() {
+      return this.#user_Id
     }
     get Email() {
       return this.#Email
@@ -28,8 +28,8 @@ class Feedback {
 
     }
 
-    async feedbackSection(Full_Name, Email, feedback_text, Satisfaction_rating) {
-        const data = JSON.stringify({Full_Name:Full_Name, Email:Email, feedback_text:feedback_text, Satisfaction_rating:Satisfaction_rating})
+    async feedbackSection(user_Id, Email, feedback_text, Satisfaction_rating) {
+        const data = JSON.stringify({user_Id:user_Id, Email:Email, feedback_text:feedback_text, Satisfaction_rating:Satisfaction_rating})
         const response = await fetch(BACKEND_URL + '/feedback',{
           method: 'post',
           headers: {'Content-Type':'application/json'},
