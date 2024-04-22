@@ -67,3 +67,13 @@ Content-Type: application/json
         "satisfaction_rating": "5"
 
 }
+
+### Save Quiz Result
+POST http://localhost:3001/myquizzes/saveQuizResult
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "cate_name": "Mathematics",
+    "score": 5
+}

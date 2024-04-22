@@ -7,3 +7,6 @@ Content-Type: application/json
     "id_category":"2",
     "score": "8"
 }
+
+### Get score details
+GET http://localhost:3001/score/4
