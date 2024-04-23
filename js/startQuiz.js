@@ -78,15 +78,22 @@ function startQuiz() {
             alert("Error retrieving questions: " + error.message);
         }
     };
+    // Add a global variable to store the current quiz number
+    let currentQuizNumber = 1;
 
     // This function displays the question and options on the screen
     const displayQuestion = (questionData) => {
-        firstDiv.innerHTML = ""; // Clear previous content
-        const questionDiv = createQuestionElement(questionData);
-        const optionsDiv = createOptions(questionData.options);
-        firstDiv.appendChild(questionDiv);
-        firstDiv.appendChild(optionsDiv);
-    };
+    firstDiv.innerHTML = ""; // Clear previous content
+    
+    // Display the current quiz number
+    const quizNumberDiv = document.getElementById("quizNumber");
+    quizNumberDiv.textContent = `Quiz ${currentQuizNumber}/10`;
+
+    const questionDiv = createQuestionElement(questionData);
+    const optionsDiv = createOptions(questionData.options);
+    firstDiv.appendChild(questionDiv);
+    firstDiv.appendChild(optionsDiv);
+};
 
     // This function creates the question element   
     const createQuestionElement = (questionData) => {
@@ -160,7 +167,7 @@ function startQuiz() {
         firstDiv.appendChild(createNextButtonElement());
     };
 
-  // This function creates the next button
+// This function creates the next button
 const createNextButtonElement = () => {
     const nextButtonContainer = document.createElement('div');
     nextButtonContainer.className = "nextButtonContainer"; // Adding a class for styling
@@ -169,6 +176,7 @@ const createNextButtonElement = () => {
     nextButton.innerHTML = "NEXT";
     nextButton.addEventListener("click", function() {
         currentElement++;
+        currentQuizNumber++; // Increment the current quiz number
         if (currentElement === answerArray.length) {
             displayScoreBox(score, answerArray.length, selectedOptionId);
         } else {

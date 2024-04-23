@@ -22,13 +22,13 @@ body {
 /* New styles for questionDiv */
 .questionDiv {
     background-color: #e6e6e6; 
-    padding: 20px;
+    padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin: 20px auto; 
     width: 100%; 
     text-align: center; 
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 /* New styles for answer buttons */
@@ -219,5 +219,11 @@ body {
 }
 
 
-
+#quizNumber {
+    padding: 10px; /* Padding for the quiz number */
+    margin-top: 10px; /* Adjust margin-top as needed */
+    text-align: center; /* Center the text */
+    font-size: 20px; /* Font size for the quiz number */
+    font-weight: 700; /* Font weight for the quiz number */
+}
  
