@@ -55,16 +55,25 @@
         </div>
       </nav>
   </div>
-  <div class="container">
-    <div id="profile-image"></div>
-  
-      <div id="user-info">
-              <p><strong>First Name:</strong> <span id="firstname"></span></p>
-              <p><strong>Last Name:</strong> <span id="lastname"></span></p>
+  <div class="container profile-form shadow-lg p-4 bg-white rounded d-flex align-items-center container-fluid justify-content-center">
+    <form method="get" id="#myForm">
+        <h3 class="mt-1 font-weight-bold container-fluid">User Profile</h3>
+        <hr class="mb-4">
+        <div class="row">
+            <div class="col-md-12">
+                 <div class="container">
+                   <div id="profile-image"></div>
+          <div id="user-info">
+              <p><strong>Name:</strong> <span id="name"></span></p>
               <p><strong>Phone:</strong> <span id="phone"></span></p>
               <p><strong>Email:</strong> <span id="email"></span></p>
-            </div>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+              </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
  <script type="module" src="./js/userProfile.js"></script>
 </body>
 </html>

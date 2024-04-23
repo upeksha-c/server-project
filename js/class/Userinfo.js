@@ -7,6 +7,9 @@ class User {
   #lastname = undefined
   #phone = undefined
   #email = undefined
+  #fullName = undefined
+  #image = undefined
+
 
   constructor() {
     const userFromStorage = sessionStorage.getItem('user')
@@ -17,6 +20,8 @@ class User {
       this.#lastname = userObject.lastname
       this.#phone = userObject.phone
       this.#email = userObject.email
+      this.#fullName = userObject.firstname + ' ' + userObject.lastname
+      this.#image = userObject.image
       
     }
   }
@@ -40,6 +45,12 @@ class User {
   get email() {
     return this.#email
   }
+  get fullName() {
+    return this.#fullName
+  }
+  get image() {
+    return this.#image
+  }
 
   get isLoggedIn() {
     return this.#id !== undefined ? true : false
@@ -62,6 +73,7 @@ class User {
       this.#firstname = json.firstname
       this.#lastname = json.lastname
       this.#phone = json.phone
+      this.#fullName = json.firstname + ' ' + json.lastname
       sessionStorage.setItem('user',JSON.stringify(json))
       return this
     } else {
@@ -78,6 +90,7 @@ class User {
       this.#lastname = json.lastname
       this.#phone = json.phone
       this.#email = json.email
+      this.#fullName = json.firstname + ' ' + json.lastname
       return this
     } else {
       throw response.statusText
@@ -107,6 +120,8 @@ class User {
       this.#lastname = json.lastname
       this.#phone = json.phone
       this.#email = json.email
+      this.#fullName = json.firstname + ' ' + json.lastname
+
       return this
     } else {
       throw response.statusText
@@ -120,6 +135,7 @@ class User {
     this.#lastname = undefined
     this.#phone = undefined
     this.#email = undefined
+    this.#fullName = undefined
     sessionStorage.removeItem('user')
   }
 
