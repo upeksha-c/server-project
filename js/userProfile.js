@@ -1,39 +1,45 @@
+// Make sure the import paths are correct
 import { BACKEND_URL } from "./config.js";
 import { User } from "./class/Userinfo.js";
 
-const user = new User();
-console.log(user);
-
 document.addEventListener('DOMContentLoaded', async () => {
-  const image_div = document.getElementById('profile-image'); 
-
+  const user = new User(); // Instantiate the User class
   
-  if (user.isLoggedIn) {
-    renderProfileImage(image_div, user);
-    displayProfile();
+  // Function to render profile image
+  function renderProfileImage(image_div, user) {
+    const img = document.createElement('img');
+    img.setAttribute('class', 'card-img-top profile-image');
+    img.setAttribute('alt', 'profile image');
+    
+    // Construct the image source URL
+    img.src = `${BACKEND_URL}/images/placeholder_image.png${user.image || ''}`;
+    
+    image_div.appendChild(img);
   }
 
+  // Function to display user profile information
   function displayProfile() {
-    const firstNameElement = document.getElementById('firstname');
-    const lastNameElement = document.getElementById('lastname');
+    const nameElement = document.getElementById('name')
     const phoneElement = document.getElementById('phone');
     const emailElement = document.getElementById('email');
 
-    firstNameElement.innerHTML = user.firstname;
-    lastNameElement.innerHTML = user.lastname;
+    // Get user full name
+    const fullName = user.firstname + ' ' + user.lastname;
+   
+    // Populate user information into HTML elements
+    nameElement.innerHTML = user.fullName;
     phoneElement.innerHTML = user.phone;
     emailElement.innerHTML = user.email;
   }
 
-  console.log(displayProfile);
-  function renderProfileImage(image_div, user) {
-    const img = document.createElement('img');
+  // Get the profile image container
+  const image_div = document.getElementById('profile-image'); 
 
-    img.setAttribute('class', 'card-img-top profile-image');
-    img.setAttribute('alt', 'profile image');
-    img.src = `${BACKEND_URL}/images/placeholder_image.png${user.image || ''}`;
-   console.log(image_div);
-   
-    image_div.appendChild(img);
+  // Check if user is logged in
+  if (user.isLoggedIn) {
+    // Render profile image
+    renderProfileImage(image_div, user);
+    // Display user profile information
+    displayProfile();
   }
 });
