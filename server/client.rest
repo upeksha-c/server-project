@@ -62,7 +62,6 @@ Content-Type: application/json
     
 {
         "user_id": "2",
-        "email": "Hikko@gmail.com",
         "feedback_text": "I love the content",
         "satisfaction_rating": "5"
 
