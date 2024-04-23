@@ -22,6 +22,7 @@ document.querySelector('#login-button').addEventListener('click', async (event) 
         
         // Store the user ID in session storage upon successful login
         sessionStorage.setItem('userId', loggedInUser.id);
+        
 
         // If login is successful, display a success message and redirect to the index page
         alert('Login successful');
