@@ -1,0 +1,64 @@
+body{
+    background-color:rgb(46, 111, 191);
+
+}
+
+.ThankYouContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+   margin-top: 17%;
+   background-color: rgb(201, 166, 100);
+   border-radius: 50px;
+   padding: 2%;
+   width: 40%;
+   margin-left: 28%;
+   max-width: 100%;
+}
+.ThankYouContainer h1{
+    font-size: 2.2rem;
+    font-weight: bolder;
+}
+button{
+    background-color: rgb(46, 111, 191);
+    color: white;
+    padding: 2%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+button:hover{
+    background-color: white;
+    color:rgb(46, 111, 191) ;
+}
+/*make responsive*/
+@media screen and (min-width: 768px){
+    .ThankYouContainer{
+        margin-top: 60%;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 1024px){
+    .ThankYouContainer{
+        margin-top: 50% !important;
+        width: 90%;
+        margin-left: 0;
+    }
+    .ThankYouContainer h1{
+        font-size: 2.2rem;
+        font-weight: bolder;
+    }
+}
+
+@media screen and (max-width: 1280px){
+    .ThankYouContainer{
+        margin-left: 0;
+        width: 100%;
+        margin-top: 20%;
+    }
+    .ThankYouContainer h1{
+        font-size: 2.2rem;
+        font-weight: bolder;
+    }
+}

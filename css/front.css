@@ -118,12 +118,8 @@ h1{
 }
 .carousel-control-prev, .carousel-control-next{
     background-color: #565050;
-    /* width: 6vh;
-    height: 6vh; */
-    
     border-radius:50%;
-    /* top: 50%; */
-    /* transform: translateX(); */
+
 }
 
 .carousel-control-next {
