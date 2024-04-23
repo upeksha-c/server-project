@@ -1,19 +1,15 @@
 body{
-    background-color:rgb(46, 111, 191);
-
+    background-color: rgb(158, 157, 154);
 }
 
 .ThankYouContainer{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items:center ;
-   margin-top: 17%;
-   background-color: rgb(201, 166, 100);
-   border-radius: 50px;
+    align-items:center !important ;
+   margin-top: 15% !important;
    padding: 2%;
-   width: 40%;
-   margin-left: 28%;
+   width: 40% !important;
+   margin-left: 28% !important;
    max-width: 100%;
 }
 .ThankYouContainer h1{
@@ -34,9 +30,17 @@ button:hover{
 /*make responsive*/
 @media screen and (min-width: 768px){
     .ThankYouContainer{
-        width: 100%;
-        margin-left: 0;
+        margin-top: 50%;
+        width: 80% !important;
+        margin-left: 8% !important;
     }
 }
+@media (min-width: 768px) and (max-width: 912px) {
+    .ThankYouContainer{
+        width: 75% !important;
+        margin-left: 11% !important;
+    }
+}
+
 
 
