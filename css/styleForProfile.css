@@ -1,52 +1,43 @@
+/* styleForProfile.css */
+
 body {
     background-color: #f8f9fa; /* Light gray background */
-    
-   /* background-image: url('https://i.pinimg.com/736x/d7/b6/bc/d7b6bc66742252ca5986404ea174314b.jpg'); /* Background image */
-   /* background-size: cover; /* Cover the entire viewport */
-    /*background-position: center; /* Center the background image */
-   /* background-attachment: fixed; /* Fixed background */
-    /*font-family: Arial, sans-serif; /* Set a fallback font */
-}
-    
-*{
-    margin: 0;
-    padding: 0;
-    
+    font-family: "Roboto", sans-serif; /* Set font family */
 }
 
-.navbar{
-    margin-top: 2%;
-   
-    
+* {
+    margin: 0;
+    padding: 0;
 }
-/*style for QUIZZYFY*/
-.navbar-brand{ /*logo*/
+
+.navbar {
+    margin-top: 2%;
+}
+
+.navbar-brand {
+    /* Preserve Quizzify logo styles */
     color: white !important;
     font-size: xx-large !important;
     font-weight: 500;
     margin-left: 30px;
     text-shadow: 2px 2px 4px rgb(40, 72, 113);
-    background-color:rgb(46, 111, 191) !important ;
+    background-color: rgb(46, 111, 191) !important;
     border-radius: 50%;
     padding: 2%;
 }
-/*style for navbar links*/
-.nav-link{
-    /*color: #c200ff !important;*/
-    color:rgb(46, 111, 191) !important;
-    font-size:x-large !important;
+
+.nav-link {
+    /* Preserve navigation font and colors */
+    color: rgb(46, 111, 191) !important;
+    font-size: x-large !important;
     margin-left: 30px;
 }
 
-/*style by using some hover in nav link*/
-.nav-link:hover{
+.nav-link:hover {
     background-color: rgb(46, 111, 191);
     border-radius: 8px;
     color: white !important;
 }
-
-
-
 
 #container1 {
     background-color: #ffffff; /* White container background */
@@ -54,30 +45,24 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
     padding: 30px; /* Padding for the container */
     margin-top: 10%; /* Margin from the top of the page */
-    /*margin-right: 10px; /* Margin from the left of the page */
-    max-width: 700px; /* Adjust the maximum width as needed */
-    /*margin: auto; /* Center the container horizontally */
-
+    max-width: px; /* Adjust the maximum width as needed */
 }
 
-.card-img-top.profile-image  {
+.card-img-top.profile-image {
     width: 30%;
     border-top-left-radius: calc(.25rem - 1px);
     border-top-right-radius: calc(.25rem - 1px);
-   
-    
+}
+
 .profile-image {
-    width: 20%; /* Profile image width */
-    height: 20%; /* Profile image height */
-     /* Box shadow for depth */
+    width: 20%;
 }
 
 .form-control {
     border-radius: 20px; /* Rounded corners for input fields */
     border-color: #ced4da; /* Border color for input fields */
-    
-    
 }
+
 .btn-primary {
     background-color: #007bff; /* Blue color for primary button */
     border-color: #007bff; /* Blue border color for primary button */
@@ -85,38 +70,58 @@ body {
     padding: 10px 30px; /* Padding for buttons */
     transition: all 0.3s ease; /* Smooth transition for button hover */
 }
+
 .btn-primary:hover {
     background-color: #0056b3; /* Darker blue color on button hover */
     border-color: #0056b3; /* Darker blue border color on button hover */
 }
+
 h1 {
     color: #007bff; /* Blue color for headings */
-
 }
 
 h3 {
     color: #007bff; /* Blue color for headings */
     margin-top: 10px; /* Add margin from the top */
 }
+
 a {
     color: #007bff; /* Blue color for links */
     text-decoration: none; /* Remove underline from links */
     transition: all 0.3s ease; /* Smooth transition for link hover */
 }
+
 a:hover {
     color: #0056b3; /* Darker blue color on link hover */
 }
 
 label {
     font-weight: bold; /* Make labels bold */
-    text-align: center; /* Center-align labels */   
-}                    
+    text-align: center; /* Center-align labels */
+}
+
 input[type="text"],
-input[type="password"]
- {
+input[type="password"] {
     width: 100%; /* Full width for input fields */
     padding: 10px; /* Padding for input fields */
     margin-bottom: 10px; /* Spacing between input fields */
     border: 1px solid #ced4da; /* Border color */
     border-radius: 5px; /* Rounded corners */
+}
+.side-image {
+    float: right; /* Float the image to the right */
+    margin-left: 20px; /* Add margin to the left */
+}
+
+.side-image img {
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+}
+.profile-form {
+    padding: 100px; /* Increase padding to make the white box larger */
+    margin-top: 50px; /* Increase margin from the top to position it below the navbar */
+    margin-left: 10px; /* Increase margin from the left to position it away from the logo */
+    margin-right: 150px; /* Increase margin from the right to position it away from the navigation bar */
 }
