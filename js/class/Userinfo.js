@@ -59,7 +59,7 @@ class User {
 
  
   async login(email,password) {
-    const data = JSON.stringify({email: email, password: password})
+    const data = JSON.stringify({ email: email, password: password})
     const response = await fetch(BACKEND_URL + '/user/login',{
       method: 'post',
       headers: {'Content-Type':'application/json'},

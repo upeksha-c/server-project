@@ -4,13 +4,11 @@ const user = new User();
 
 const feedbackinstance = new Feedback()
 
-//get id of user
-const userId = user.id
-console.log(userId)
+
 
 //get user email
 const userEmail = user.email
-console.log(userEmail)
+//console.log(userEmail)
 
 
 // Select all star icons
@@ -40,6 +38,18 @@ const Email = document.querySelector('#Email');
 const feedbackArea = document.querySelector('#feedbackArea');
 //const rating = document.querySelectorAll('.far fa-star');
 
+// Hide the user id field
+user_Id.style.display = 'none';
+
+//get id of user
+// Get user id from session storage and set it as the value of the user id field
+const userId = sessionStorage.getItem('userId');
+user_Id.value = userId;
+
+// Get email from session storage and set it as the value of the user id field
+const emailId = sessionStorage.getItem('emailId');
+Email.value = emailId;
+//console.log(emailId); 
 
 // Add event listener to the Submit button
 document.querySelector('.btnFeedback').addEventListener('click', (event) => {
@@ -58,17 +68,21 @@ document.querySelector('.btnFeedback').addEventListener('click', (event) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     alert('Please enter a valid email address.');
+   
     Email.value = ''; // Clear the email field after showing alert
     return;
   }
-  
+
+
   // Attempt to submit
   feedbackinstance.feedbackSection(users_Id, email, feedback, Satisfaction_rating).then(user => {
      // If submission is successful, show the submitted alert
-     alert("Thank you for submitting Feedback 😊");
+     //alert("Thank you for submitting Feedback 😊");
+      // If submission is successful, redirect to the thank you page
+    window.location.href = 'feedback_thankYou.html';
 
      // Clear the input fields
-     users_Id.value = '';
+     user_Id.value = '';
      Email.value = '';
      feedbackArea.value = '';
 

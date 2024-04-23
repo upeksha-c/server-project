@@ -29,7 +29,9 @@ class Feedback {
     }
 
     async feedbackSection(user_Id, Email, feedback_text, Satisfaction_rating) {
-        const data = JSON.stringify({user_Id:user_Id, Email:Email, feedback_text:feedback_text, Satisfaction_rating:Satisfaction_rating})
+        //console.log("User_id: " + user_Id);
+        //console.log("Email: " + Email);
+        const data = JSON.stringify({user_id:user_Id, email:Email, feedback_text:feedback_text, satisfaction_rating:Satisfaction_rating})
         const response = await fetch(BACKEND_URL + '/feedback',{
           method: 'post',
           headers: {'Content-Type':'application/json'},
