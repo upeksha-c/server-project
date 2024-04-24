@@ -10,8 +10,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
             
         if (!userId) {
-            console.error('User ID not found in sessionStorage');
-            return;
+
+            //since it's not logged in user table heading hide
+            const table = document.querySelector('.table-dark')
+            table.style.display = 'none'
+
+            //catch a div element
+            const statement = document.querySelector('#table')
+            statement.appendChild(requestLogin())
+            return
+            
         }
 
         // Fetch quiz results for the logged-in user from the server
@@ -90,3 +98,49 @@ function renderChart(statistics) {
         }
     });
 }
+
+
+//function to display thankyou
+function requestLogin(){
+    //create div
+    let div1 = document.createElement("div")
+    div1.classList = "jumbotron text-center"
+  
+    //create heading
+    let heading = document.createElement("h3")
+    heading.classList = "display-3"
+    heading.innerHTML = "Join with us"
+    div1.appendChild(heading)
+  
+    //create description
+    let description = document.createElement("p")
+    description.classList = "lead"
+    description.innerHTML = "Please login to use this feature."
+    div1.appendChild(description)
+  
+    //create rule
+    let rule = document.createElement("hr")
+    div1.appendChild(rule)
+  
+    //trouble statement
+    let description2 = document.createElement("p")
+    description2.innerHTML = "Having trouble?"
+    let anchor = document.createElement('a')
+    anchor.href = '../contact.html'
+    anchor.innerHTML = 'Contact us'
+    description2.appendChild(anchor)
+    div1.appendChild(description2)
+  
+    //direct to home page
+    let description3 = document.createElement("p")
+    description3.classList = "lead"
+    let anchor2 = document.createElement('a')
+    anchor2.classList = 'btn btn-primary btn-lg'
+    anchor2.href = '../login.html'
+    anchor2.role = "button"
+    anchor2.innerHTML = 'LOG IN'
+    description3.appendChild(anchor2)
+    div1.appendChild(description3)
+  
+    return div1
+  }
