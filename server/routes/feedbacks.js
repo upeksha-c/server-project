@@ -25,6 +25,17 @@ fbRouter.get("/feedback",async(req,res) => {
   }
 })
 
+fbRouter.get("/feedback/pic",async(req,res) => {
+  try{
+      const result = await query("SELECT image FROM feedbackPhoto ORDER BY random() LIMIT 3");
+      const rows = result.rows ? result.rows : []
+      res.status(200).json(rows)
+  }catch(error){
+      res.statusMessage = error
+      res.status(500).json({error:error})
+  }
+})
+
 module.exports = {
   fbRouter
 }

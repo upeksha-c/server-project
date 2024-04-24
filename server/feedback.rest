@@ -1,2 +1,5 @@
 ### Get posts
 GET http://localhost:3001/feedback
+
+### Get posts
+GET http://localhost:3001/feedback/pic
