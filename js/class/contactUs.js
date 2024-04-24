@@ -56,7 +56,7 @@ class Contact{
             body: data
         })
         if(response.ok === true){
-            alert('Submitted')
+        
         }
         else{
             throw response.statusText
