@@ -1,11 +1,5 @@
 body {
     background-color: #f8f9fa; /* Light gray background */
-    
-   /* background-image: url('https://i.pinimg.com/736x/d7/b6/bc/d7b6bc66742252ca5986404ea174314b.jpg'); /* Background image */
-   /* background-size: cover; /* Cover the entire viewport */
-    /*background-position: center; /* Center the background image */
-   /* background-attachment: fixed; /* Fixed background */
-    /*font-family: Arial, sans-serif; /* Set a fallback font */
 }
     
 *{
@@ -39,7 +33,6 @@ body {
 
 /*style for navbar links*/
 .nav-link{
-    /*color: #c200ff !important;*/
     color:rgb(46, 111, 191) !important;
     font-size:x-large !important;
     margin-left: 30px;
@@ -51,9 +44,6 @@ body {
     border-radius: 8px;
     color: white !important;
 }
-
-
-
 #container1 {
     background-color: #ffffff; /* White container background */
     border-radius: 10px; /* Rounded corners for the container */
@@ -62,15 +52,7 @@ body {
     margin-top: 10%; /* Margin from the top of the page */
     /*margin-right: 10px; /* Margin from the left of the page */
     max-width: 700px; /* Adjust the maximum width as needed */
-    /*margin: auto; /* Center the container horizontally */
-
 }
-
-
-    
-
-
-
 .form-control {
     border-radius: 20px; /* Rounded corners for input fields */
     border-color: #ced4da; /* Border color for input fields */

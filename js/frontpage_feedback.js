@@ -45,7 +45,7 @@ getImagesBackend(BACKEND_URL_FEEDBACK_IMAGES)
 function feedbackCard(pic,fullname,rating,text){
     //create a div and give class name
     let cardDiv = document.createElement('div')
-    cardDiv.classList = 'col'
+    cardDiv.classList = 'col container-fluid feedback'
 
     //create another div and giv class name and append
     let secondDiv = document.createElement('div')
@@ -54,6 +54,7 @@ function feedbackCard(pic,fullname,rating,text){
 
     //create image element and attach an image
     let image = document.createElement('img')
+    image.classList = 'container-fluid'
     image.src = pic
     image.alt = ""
     //attach to card div
