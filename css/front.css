@@ -241,27 +241,6 @@ footer{
 ul{
   list-style-type: none;  
 }
-@media screen and (min-width: 567px){ /*for largest screen imp*/
-    .cards-wrapper{
-        display: flex;
-    
-    }
-    
-    .card{
-        margin: 0.5em;
-        width: calc(100%/3);
-    }
-    .image-wrapper{
-        height: 22vw;
-        margin: 0 auto;
-        cursor: pointer;
-    }
-    }
-    
-    .image-wrapper img{
-        max-width: 100%;
-        max-height: 100%;
-    }
 h6{
     margin-top: 2% !important;
     font-size: larger !important;
@@ -297,6 +276,97 @@ h6{
     }
     
 }
+@media screen and (min-width: 567px){ /*for largest screen imp*/
+    .cards-wrapper{
+        display: flex;
+    
+    }
+    
+    .card{
+        margin: 0.5em;
+        width: calc(100%/3);
+    }
+    .image-wrapper{
+        height: 22vw;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+    }
+    
+    .image-wrapper img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+@media screen and (max-width: 767px) {
+    .wrapper {
+        padding: 20px;
+    }
+    .col-md-6 img {
+        padding: 20px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    .container1 h1{
+        font-size: 2em;
+    }
+    .btn3{
+        margin-top: 3.25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #access_btn{
+        font-size: 1.25em;
+        padding:0;
+        margin-right: 0
+    }
+    .paragraph{
+       text-align: center;
+    }
+    .para1{
+        font-size: 0.5em;
+    }
+    #carouselExampleControls{
+        margin-top: 5%;
+        font-size: 1rem !important;
+    }
+    .card-title{
+        margin-top: 15%;
+    }
+    }
+  
 
+@media screen and (min-width: 768px) {
+    .cards-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .card {
+        flex: 0 0 calc(33.33% - 20px);
+        margin: 10px;
+        width: calc(33.33% - 20px);
+    }
+    .image-wrapper {
+        height: 22vw;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .slider {
+        height: 150px;
+    }
+    .slider .slide-track {
+        animation: scroll 40s linear infinite;
+        display: flex;
+        width: calc(250px * 7);
+    }
+    .slider .slide {
+        height: 100px;
+        width: 250px;
+    }
+}
 
 
