@@ -16,7 +16,7 @@ fbRouter.post("/feedback",async(req,res) => { //route handler for POST requests 
 
 fbRouter.get("/feedback",async(req,res) => {
   try{
-      const result = await query("SELECT feedback.feedback_text, CONCAT(userinfo.firstname, ' ', userinfo.lastname) AS fullname FROM feedback INNER JOIN userinfo ON feedback.user_id = userinfo.id ORDER BY random() LIMIT 3");
+      const result = await query("SELECT feedback.feedback_text, CONCAT(userinfo.firstname, ' ', userinfo.lastname) AS fullname, feedback.satisfaction_rating FROM feedback INNER JOIN userinfo ON feedback.user_id = userinfo.id ORDER BY random() LIMIT 3");
       const rows = result.rows ? result.rows : []
       res.status(200).json(rows)
   }catch(error){
