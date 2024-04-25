@@ -1,8 +1,19 @@
-
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css");
 .navbar{
     margin-top: 2%;
     
+}
+
+body {
+    display: grid !important;
+    place-items: center !important;
+    background-color: #f8f9fa;
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+.navbar{
+    margin-top: 2%; 
 }
 
 /*style for QUIZZYFY*/
@@ -31,18 +42,22 @@
     color: white !important;
 }
 
-.col-md-8 h1{
-    font-size: 5rem !important;
-    font-weight: 700;
+/*style for wrapper class*/
+.wrapper{
+    border-radius: 10px;
+    padding: 50px 100px;
+    box-shadow: 0 0 40px 2px rgba(37, 73, 214, 0.18);
+    background-color: rgb(46, 111, 191);
+    
 }
-.col-md-8 .lead{
-    font-size: 2rem;
-    font-weight: 500;
-
+.feature-box{
+    padding: 15px;
 }
 
-.col-md-8 .lead2{
-    font-size: 1.5rem;
-    font-weight: 400;
-
+#contact{
+    margin-top: 2%;
 }
+label{
+    font-size: 1.75em !important;
+}
+
