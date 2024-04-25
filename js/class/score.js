@@ -36,7 +36,7 @@ class Score{
             body: data
         })
         if(response.ok === true){
-            alert('Score stored')
+            
         }
         else{
             throw response.statusText
