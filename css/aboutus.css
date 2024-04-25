@@ -107,3 +107,41 @@ input[type="password"]
 .purple-underline{
     background: url(..\photos\straight-underlined.svg);
 }
+
+@media screen and (max-width: 576px) {
+    .navbar-brand {
+        font-size: medium !important;
+    }
+
+    .nav-link {
+        font-size: medium !important;
+    }
+
+    #container1 {
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .navbar-brand {
+        font-size: large !important;
+    }
+
+    .nav-link {
+        font-size: large !important;
+    }
+
+    #container1 {
+        padding: 30px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .navbar-brand {
+        font-size: x-large !important;
+    }
+
+    .nav-link {
+        font-size: x-large !important;
+    }
+}
