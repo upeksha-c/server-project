@@ -80,6 +80,13 @@ h3 {
     color: #007bff; /* Blue color for headings */
     margin-top: 10px; /* Add margin from the top */
 }
+
+p { 
+    color: #000000; /* Black color for paragraphs */
+    margin-top: 10px; /* Add margin from the top */
+    font-size: 20px;
+    
+}
 a {
     color: #007bff; /* Blue color for links */
     text-decoration: none; /* Remove underline from links */
