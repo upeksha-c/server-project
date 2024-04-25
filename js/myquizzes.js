@@ -73,31 +73,34 @@ function generateStatistics(quizResults) {
 // Function to render a bar chart
 function renderChart(statistics) {
     const ctx = document.getElementById('chart').getContext('2d');
-    const chart = new Chart(ctx, {
+    const labels = statistics.map(stat => stat.category);
+    const data = statistics.map(stat => stat.averageScore);
+
+    // Create a new chart
+    new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: statistics.map(stat => stat.category),
+            labels: labels,
             datasets: [{
                 label: 'Average Score',
-                data: statistics.map(stat => stat.averageScore),
+                data: data,
                 backgroundColor: 'rgba(54, 162, 235, 0.8)',
                 borderColor: 'rgba(54, 162, 235, 3)',
                 borderWidth: 1
             }]
         },
         options: {
-            responsive: true, // Allow chart to resize
-            maintainAspectRatio: false, // Allow chart to adjust aspect ratio
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
+                y: {
+                    beginAtZero: true
+                }
             }
         }
     });
 }
+
 
 
 //function to display thankyou
