@@ -26,7 +26,7 @@ document.querySelector('#login-button').addEventListener('click', async (event) 
         sessionStorage.setItem('emailId', loggedInUser.email);
         
         // If login is successful, display a success message and redirect to the index page
-        alert('Login successful');
+        //alert('Login successful');
         window.location.href = "startquiz.html";
     } catch (error) {
         // If login fails, display an error message
