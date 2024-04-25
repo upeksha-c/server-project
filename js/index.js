@@ -1,12 +1,11 @@
 //importing root url
-import { BACKEND_URL } from '../config.js';
+import { BACKEND_URL } from './config.js';
 // Import modules
 import { User } from "./class/Userinfo.js";
 import { Profile } from "./class/Profile.js";
 
 // Constants
 const profileDiv = document.querySelector('div#profile');
-const editProfileButton = document.querySelector('button#edit-profile');
 const logoutButton = document.querySelector('button#logout-button');
 const profileIcon = document.querySelector('a#profileIcon');
 
@@ -49,7 +48,7 @@ const fetchUserProfile = async () => {
 // Event listeners
 
 // Profile icon click event
-profileIcon.addEventListener('click', async (event) => {
+  profileIcon.addEventListener('click', async (event) => {
   event.preventDefault();
   
   try {
@@ -80,9 +79,3 @@ logoutButton.addEventListener('click', async (event) => {
   }
 });
 
-// Edit profile button click event
-editProfileButton.addEventListener('click', () => {
-  // Handle edit profile button click event
-  // Redirect to edit profile page or open edit profile modal
-  console.log('Edit profile button clicked');
-});

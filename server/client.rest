@@ -9,7 +9,7 @@ Content-Type: application/json
     
 
 ###Get user profile by id
-GET http://localhost:3001/user/profile/8
+GET http://localhost:3001/user/profile/2
 
 
 ### Login with valid credentials
@@ -17,7 +17,7 @@ POST http://localhost:3001/user/login
 Content-Type: application/json
     
 {
-        "email": "admin@fo.com",
+        "email": "admin12@f8oodi.gom",
         "password": "admin1110"
 }
 
@@ -35,26 +35,14 @@ POST http://localhost:3001/user/register
 Content-Type: application/json
     
 {
-        "firstname": "gleo8ria",
-        "lastname": "bediko",
-        "phone": "1234578090",
-        "email": "admin@f8oodi.gom",
-        "password": "admin281110"
+        "firstname": "gleria",
+        "lastname": "bedik",
+        "phone": "1234578091",
+        "email": "admin12@f8oodi.gom",
+        "image_name": "image.jpg",
+        "password": "admin1110"
 }
 
-
-
-### Update user profile
-PUT http://localhost:3001/user/profile/?id=46
-Content-Type: application/json
-    
-{
-        "firstname": "jane",
-        "lasname": "joy",
-        "phone" : "1234567899",
-        "email": "ggg@gg.com"
-
-}
 
 ### Feedback
 POST http://localhost:3001/feedback
