@@ -61,3 +61,37 @@ label{
     font-size: 1.75em !important;
 }
 
+
+@media (min-width: 576px) {
+    .wrapper {
+        padding: 50px 40px;
+    }
+    label {
+        font-size: 1.25em !important;
+    }
+}
+@media (min-width: 768px) {
+    .wrapper {
+        padding: 50px 80px;
+    }
+    label {
+        font-size: 1.5em !important;
+    }
+}
+@media (min-width: 992px) {
+    .wrapper {
+        padding: 50px 100px;
+    }
+    label {
+        font-size: 1.75em !important;
+    }
+}
+@media (min-width: 1200px) {
+    .wrapper {
+        padding: 50px 120px;
+    }
+    label {
+        font-size: 2em !important;
+    }
+}
+
