@@ -202,7 +202,7 @@ h1{
 }
 
 .testimonial img{
-    width: 100px;
+    width: auto;
     height: 100px;
     border-radius: 50%;
     
