@@ -15,10 +15,10 @@
   <title>Quizzify_profile</title>
 </head>
 <body>
-  <div class="container container-fluid">
+  <div class="container">
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand" href="Front.html">Quizzify</a>
+          <a class="navbar-brand" href="#">Quizzify</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
           </button>
@@ -28,43 +28,53 @@
                 <a class="nav-link" href="Front.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="myquizzes.html">My Quizzes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Feedback.html">Feedback</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="aboutus.html">About Us</a>
-              </li>                  
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="startQuiz.html">My Quizzes</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="userprofile.html" id="profileIcon" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="profileIcon" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fas fa-user"></i>
                 </a>
                              
-                <ul class="dropdown-menu" aria-labelledby="profileIcon">              
-                    <li><a class="dropdown-item" href="Feedback.html"><i class="bi bi-chat-left-text"></i> Feedback</a></li>
+                <ul class="dropdown-menu" aria-labelledby="profileIcon">
+                    <li><a class="dropdown-item" href="userprofile.html"></a></li>                  
+                    <li><a class="dropdown-item" href="#" id="edit-profile"><i class="fas fa-user"></i> Edit Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-sliders-h"></i> My scores</a></li>
+                    <li><a class="dropdown-item" href="contact.html"><i class="far fa-question-circle"></i> Help & Support</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="logout.html" id="logout-button"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                 </ul>
-                
             </li>
-            </ul>
-          </div>
+            </div>
         </div>
       </nav>
-</div>
+  </div>
   <div class="container profile-form shadow-lg p-4 bg-white rounded d-flex align-items-center container-fluid justify-content-center">
-    <form method="get" id="#myForm">
+    <form method="get" id="myForm">
+        
         <h3 class="mt-1 font-weight-bold container-fluid">User Profile</h3>
         <hr class="mb-4">
         <div class="row">
             <div class="col-md-12">
+                <div class="form-group">
+               
+            <div class="col-md-12">
                  <div class="container">
-                   <div id="profile-image"></div>
-          <div id="user-info">
+                  <div class="card">
+                    <div id="profile-image"></div>
+                     <label for="input-file">Update image</label>
+                      <input type="file" id="input-file"/>
+                      <div class="container">
+                        <button type="submit" class="btn btn-primary" id="save-button">Save</button>
+                      </div>
+                    </div>
+                <div id="user-info">
               <p><strong>Name:</strong> <span id="name"></span></p>
               <p><strong>Phone:</strong> <span id="phone"></span></p>
               <p><strong>Email:</strong> <span id="email"></span></p>
