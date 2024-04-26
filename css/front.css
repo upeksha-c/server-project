@@ -380,3 +380,146 @@ h6{
 }
 
 
+/* edit by nadeesha */
+
+
+@media screen and (max-width: 992px) {
+    .wrapper {
+        padding: 20px;
+    }
+    .wrapper {
+        padding: 20px;
+    }
+    .col-md-6 img {
+        padding: 20px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    .container1 h1 {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .container1 h1 {
+        font-size: 2em;
+    }
+    .btn3 {
+        margin-top: 3.25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+   
+    .slider {
+        height: 150px;
+    }
+    .slider .slide-track {
+        animation: scroll 40s linear infinite;
+        display: flex;
+        width: calc(250px * 7);
+    }
+    .slider .slide {
+        height: 100px;
+        width: 250px;
+    }
+}
+@media screen and (min-width: 360px) and (max-width: 740px) { 
+    .cards-wrapper {
+        display: flex;
+    }
+    .card {
+        margin: 0.5em;
+        width: calc(100%/3);
+    }
+    .image-wrapper {
+        height: 22vw;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .btn3 {
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .wrapper {
+        padding: 20px;
+    }
+    .col-md-6 img {
+        padding: 20px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    .container1 h1 {
+        font-size: 2em;
+    }
+    .btn3 {
+        margin-top: 3.25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #access_btn {
+        font-size: 1.25em;
+        padding: 0;
+        margin-right: 0
+    }
+    .paragraph {
+        text-align: center;
+    }
+    .para1 {
+        font-size: 0.5em;
+    }
+    #carouselExampleControls {
+        margin-top: 5%;
+        font-size: 1rem !important;
+    }
+    .card-title {
+        margin-top: 15%;
+    }
+    .testimonial {
+        padding: 10px;
+    }
+    .testimonial img {
+        width: 50px;
+        height: 50px;
+    }
+    .feedback {
+        height: auto;
+    }
+    .name {
+        font-size: 15px;
+    }
+    .stars {
+        font-size: 8px;
+    }
+    .testimonial p {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .slider {
+        height: 150px;
+    }
+    .slider .slide-track {
+        animation: scroll 40s linear infinite;
+        display: flex;
+        width: calc(250px * 7);
+    }
+    .slider .slide {
+        height: 100px;
+        width: 250px;
+    }
+}

@@ -3,8 +3,9 @@ const user = new User();
 
 
 const profile = document.querySelector('#profile')
-profile.addEventListener('click',function() {
-    if(user.id){
-        profile.href = '../userprofile.html'
-    }
-})
+
+if(!user.id){
+    profile.style.display = 'none'
+    table.style.display = 'none'
+
+}
