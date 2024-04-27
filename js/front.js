@@ -22,3 +22,14 @@ if(userId){
     newBtn.appendChild(anchor)
 }
 
+// Get the slide track element
+const slideTrack = document.querySelector('.slide-track');
+
+// Clone the slide elements
+const slides = slideTrack.querySelectorAll('.slide');
+const slidesClone = Array.from(slides).map(slide => slide.cloneNode(true));
+
+// Append cloned slides to the slide track
+slidesClone.forEach(slide => {
+    slideTrack.appendChild(slide);
+});

@@ -1,10 +1,9 @@
 import { User } from "./class/Userinfo.js"
 
 const user = new User()
-const login_link = document.querySelector('button#login-button')
+//catch logout button from profile dropdown
+const login_link = document.querySelector('a#logout-button')
 
-user.logout()
 
-login_link.innerHTML = "Submit"
-login_link.href ="login.html"
-login-button
+//set eventlistener, when click on button it give logout option
+login_link.addEventListener('click',() => user.logout())
