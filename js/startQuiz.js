@@ -3,7 +3,7 @@
 let selectedCategory = '';
 let selectedOptionId = 0;
 
-let startBtn = document.querySelector('.btn.btn-primary');
+let startBtn = document.querySelector('#startbtn');
 // Disable start button till select a category
 startBtn.disabled = true;
 let cateDiv = document.querySelector('.category');
@@ -52,12 +52,13 @@ dropdown.addEventListener('change', function() {
 
 // This function is called when the user clicks on the "Start Quiz" button
 function startQuiz() {
-    const content = document.querySelector(".content");
+    const content = document.querySelector("#content1");
     content.style.display = "none"; // Hide the content
 
-    const body = document.querySelector("body");
+    //attach new content
+    const content2 = document.querySelector("#main_content");
     const firstDiv = document.createElement("div");
-    body.appendChild(firstDiv);
+    content2.appendChild(firstDiv);
 
     const BACKEND_URL = "http://localhost:3001/questions?category=" + selectedCategory;
     let answerArray = [];
@@ -86,9 +87,12 @@ function startQuiz() {
     firstDiv.innerHTML = ""; // Clear previous content
     
     // Display the current quiz number
-    const quizNumberDiv = document.getElementById("quizNumber");
+    const quizNumberDiv = document.createElement("div");
+    quizNumberDiv.id ="quizNumber"
     quizNumberDiv.textContent = `Quiz ${currentQuizNumber}/10`;
-
+    firstDiv.appendChild(quizNumberDiv)
+    
+    //display question and options
     const questionDiv = createQuestionElement(questionData);
     const optionsDiv = createOptions(questionData.options);
     firstDiv.appendChild(questionDiv);

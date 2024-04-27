@@ -6,6 +6,4 @@ const profile = document.querySelector('#profile')
 
 if(!user.id){
     profile.style.display = 'none'
-    table.style.display = 'none'
-
 }

@@ -245,37 +245,38 @@ h6{
     margin-top: 2% !important;
     font-size: larger !important;
 }
-.slider{
-    margin-top: 0% !important;
-    margin-bottom: 2% !important;
-    height: 100px;
-    margin: auto;
+.slider {
+    margin-top: 0;
+    margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
     overflow: hidden;
     position: relative;
-    width: auto;
-    padding-top: 1% !important;
-    padding-bottom: 2% !important;
+    width: 100%; /* Make the slider full width */
 }
 
-.slider .slide-track{
-    animation: scroll 40s linear infinite;
+.slider .slide-track {
+    animation: scroll 70s linear infinite;
     display: flex;
-    width: calc(250px * 4);
+    width: fit-content; /* Adjust width based on content */
+    margin: 0 auto; /* Center the slide track */
 }
-.slider .slide{
-    height: 100px;
-    width: 250px;
+
+.slider .slide {
+    height: auto; /* Adjust height automatically */
+    width: 250px; /* Set a fixed width for each slide */
+    flex-shrink: 0; /* Prevent slides from shrinking */
 }
-/*for animation*/
+
 @keyframes scroll {
-    0%{
+    0% {
         transform: translateX(0);
     }
-    100%{
-        transform: translateX(calc(-250px * 4));
+    100% {
+        transform: translateX(-100%); /* Slide one full slide width */
     }
-    
 }
+
 @media screen and (min-width: 567px){ /*for largest screen imp*/
     .cards-wrapper{
         display: flex;
