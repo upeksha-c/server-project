@@ -63,21 +63,32 @@ userRouter.post("/login", async (req, res) => {
 
 
 userRouter.post("/register",async(req,res) => {
-  bcrypt.hash(req.body.password,10,async (err,hash) => {
-    if (!err) {
-      try {
-        const sql = "insert into userinfo (firstname, lastname, phone, email,image_name, password) values ($1,$2,$3,$4,$5,$6) returning id"
-        const result = await query(sql,[req.body.firstname,req.body.lastname,req.body.phone,req.body.email,req.body.image_name,hash])
-        res.status(200).json({id:result.rows[0].id}) 
-      } catch (error) {
-        res.statusMessage = error
-        res.status(500).json({error: error})
-      }
-    } else {
-      res.statusMessage = err
-      res.status(500).json({error: err})
+  let file_name =""
+  try {
+    if (req.files) {
+      const file = req.files.image
+      file_name = file.name
+      const uploadPath = `./public/images/${file_name}`
+      file.mv(uploadPath,(err) => {
+        if (err) {
+          throw new Error(err)
+        }
+      })
     }
-  })
+
+    bcrypt.hash(req.body.password,10,async (err,hash) => {
+      if (!err) {
+        const sql = "insert into userinfo (firstname, lastname, phone, email, image_name, password) values ($1,$2,$3,$4,$5,$6) returning *"
+        const result = await query(sql,[req.body.firstname,req.body.lastname,req.body.phone,req.body.email,file_name,hash])
+        res.status(200).json(result.rows[0]) 
+      } else {
+        throw new Error(err)
+      }
+    })
+  } catch (error) {
+    res.statusMessage = error
+    res.status(500).json({error:error})
+  }
 })
 
 userRouter.get("/profile/:id", async (req, res) => {

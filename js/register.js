@@ -24,29 +24,41 @@ document.querySelector('#register-button').addEventListener('click', async (even
   const lastname = last_name_input.value;
   const phone = phone_input.value;
   const email = email_input.value;
-  const image = image_input.value;
+  //const image = image_input.value;
   const password = password_input.value;
   const confirmPassword = confirm_password_input.value;
   
+  const formData = new FormData();
+  formData.append('firstname', firstname);
+  formData.append('lastname', lastname);
+  formData.append('phone', phone);
+  formData.append('email', email);
+  formData.append('image_input', image_input.files ? image_input.files[0] : null);
+  formData.append('password', password);
+  
+
   // Check if passwords match
   if (password !== confirmPassword) {
     alert('Passwords do not match');
-    return;
+    
   }
 
   try {
     // Attempt to register the user using the provided credentials
-    await user.register(firstname, lastname, phone, email,image, password, confirmPassword);
+    //await user.register(firstname, lastname, phone, email, image, password, confirmPassword);
+    await user.register(formData);
     
     // If registration is successful, redirect to the login page
+    console.log("Registration successful");
     window.location.href = "login.html";
   } catch (error) {
     // If registration fails, display an error message
+    console.error('Registration failed:', error);
     alert(error);
   }
-});
 
-// Add event listener to the form submission
+
+/* // Add event listener to the form submission
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
   e.preventDefault(); // Prevent HTML refresh
@@ -65,9 +77,10 @@ form.addEventListener('submit', (e) => {
 
   console.log(json);
 
-  const retrievedData = localStorage.getItem('data');
-  console.log(retrievedData);
+  const retrievedData = localStorage.getItem(form,'data');
+  console.log(retrievedData);*/
 
   // Redirect to the user profile page
-  window.location.href = "userprofile.html";
+  //window.location.href = "userprofile.html";
 });
+ 

@@ -8,7 +8,7 @@ class User {
   #phone = undefined
   #email = undefined
   #fullName = undefined
-  #image = undefined
+  #image_name = undefined
 
 
   constructor() {
@@ -21,7 +21,7 @@ class User {
       this.#phone = userObject.phone
       this.#email = userObject.email
       this.#fullName = userObject.firstname + ' ' + userObject.lastname
-      this.#image = userObject.image
+      this.#image_name = userObject.image_name
       
     }
   }
@@ -48,8 +48,8 @@ class User {
   get fullName() {
     return this.#fullName
   }
-  get image() {
-    return this.#image
+  get image_name() {
+    return this.#image_name
   }
 
   get isLoggedIn() {
@@ -83,7 +83,7 @@ class User {
 
   //get profile 
   async getProfile() {
-    const response = await fetch(BACKEND_URL + '/user/profile?id=' + this.#id)
+    const response = await fetch(BACKEND_URL + '/user/register' + this.#id)
     if (response.ok === true) {
       const json = await response.json()
       this.#firstname = json.firstname
@@ -91,18 +91,21 @@ class User {
       this.#phone = json.phone
       this.#email = json.email
       this.#fullName = json.firstname + ' ' + json.lastname
+      this.#image_name = formData.image_name
       return this
     } else {
       throw response.statusText
     }
   }
 
-  async register(firstname, lastname, phone, email,password) {
-    const data = JSON.stringify({firstname:firstname, lastname:lastname, phone:phone, email:email, password:password})
+  //async register(firstname, lastname, phone, email, image_name,password) {
+    //const data = JSON.stringify({firstname:firstname, lastname:lastname, phone:phone, email:email,image_name:image_name, password:password})
+  async register(formData) {
+    try {
     const response = await fetch(BACKEND_URL + '/user/register',{
       method: 'post',
-      headers: {'Content-Type':'application/json'},
-      body: data
+      //headers: {'Content-Type':'application/json'},
+      body: formData
     })
     if (response.ok === true) {
       const json = await response.json()
@@ -110,10 +113,13 @@ class User {
     } else {
       throw response.statusText
     }
+  }catch(error) {
+    console.error('registeration failed:', error.message)
+    } 
   }
 
   async fetchUserInfo() {
-    const response = await fetch(BACKEND_URL + '/user/profile?id=' + this.#id)
+    const response = await fetch(BACKEND_URL + '/user/register' + this.#id)
     if (response.ok === true) {
       const json = await response.json()
       this.#firstname = json.firstname
@@ -121,7 +127,7 @@ class User {
       this.#phone = json.phone
       this.#email = json.email
       this.#fullName = json.firstname + ' ' + json.lastname
-
+      this.#image_name = json.image_name
       return this
     } else {
       throw response.statusText
@@ -136,6 +142,7 @@ class User {
     this.#phone = undefined
     this.#email = undefined
     this.#fullName = undefined
+    this.#image_name = undefined
     sessionStorage.removeItem('user')
   }
 
