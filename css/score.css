@@ -53,6 +53,10 @@ body {
     margin-top: 3%;
 }
 
+#container1{
+    margin-top: 40px;
+}
+
 .card {
     background-color: #ffffff; /* White card background */
     border-radius: 10px; /* Rounded corners for the card */
@@ -65,7 +69,8 @@ body {
     
 .card-body {
     padding: 30px; /* Padding for the card body */
-    background-color: rgb(139, 246, 161);
+    background-color: rgb(75, 135, 212);
+    border-radius: 10px; 
 }   
 
 .card-title {
@@ -75,10 +80,27 @@ body {
     text-align: center;
 }
 
-.card-text {
+.card-body img{
+    width: auto;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;  /* align image */
+    justify-content: center;
+    margin-top: 20px; /* Margin abow the image */
+}
+
+.greet{
     font-size: x-large; /* Text font size */
+    font-weight: bold;
+    margin: 15px 0; /* Margin above and below the text */
+    text-align: center;
+    color: #ffffff;
+}
+.card-text {
+    font-size: large; /* Text font size */
     margin-bottom: 20px; /* Margin below the text */
     text-align: center;
+    font-weight: bold;
 }
 
 @media (max-width: 767px) {
