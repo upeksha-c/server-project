@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
             
         if (!userId) {
-
+        
             //since it's not logged in user table heading hide
             const table = document.querySelector('.table-dark')
             table.style.display = 'none'
@@ -21,27 +21,29 @@ document.addEventListener('DOMContentLoaded', async () => {
             return
             
         }
+        else{
 
-        // Fetch quiz results for the logged-in user from the server
-        const response = await fetch(`http://localhost:3001/score/${userId}`);
-        const quizResults = await response.json();
+            // Fetch quiz results for the logged-in user from the server
+            const response = await fetch(`http://localhost:3001/score/${userId}`);
+            const quizResults = await response.json();
 
-        // Populate the table with the fetched quiz results
-        quizResults.forEach((result, index) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${index + 1}</td>
-                <td>${result.cate_name}</td> <!-- Use category name instead of ID -->
-                <td>${result.score}</td>
-            `;
-            quizResultsTable.appendChild(row);
-        });
+            // Populate the table with the fetched quiz results
+            quizResults.forEach((result, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${result.cate_name}</td> <!-- Use category name instead of ID -->
+                    <td>${result.score}</td>
+                `;
+                quizResultsTable.appendChild(row);
+            });
 
-        // Generate statistics from the quiz results
-        const statistics = generateStatistics(quizResults);
+            // Generate statistics from the quiz results
+            const statistics = generateStatistics(quizResults);
 
-        // Render the chart
-        renderChart(statistics);
+            // Render the chart
+            renderChart(statistics);
+        }
     } catch (error) {
         console.error('Error fetching quiz results:', error);
     }
@@ -110,8 +112,8 @@ function requestLogin(){
     div1.classList = "jumbotron text-center"
   
     //create heading
-    let heading = document.createElement("h3")
-    heading.classList = "display-3"
+    let heading = document.createElement("h4")
+    heading.classList = "display-4"
     heading.innerHTML = "Join with us"
     div1.appendChild(heading)
   
