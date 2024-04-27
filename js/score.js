@@ -32,7 +32,7 @@ if(score > 9){
   image_source = "../photos/congradualation.jpg"//downloaded from Freepik and a link to website (www.freepik.com)
 }
 else if(score > 5){
-  encouragement = "Good jobGood job! Keep up the great work!"
+  encouragement = "Good job! Keep up the great work!"
   image_source = "../photos/good_job.jpg"//downloaded from Freepik and a link to website (www.freepik.com)
 }
 else if(score > 3){

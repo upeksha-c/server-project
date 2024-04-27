@@ -97,7 +97,7 @@ body {
     color: #ffffff;
 }
 .card-text {
-    font-size: large; /* Text font size */
+    font-size: x-large; /* Text font size */
     margin-bottom: 20px; /* Margin below the text */
     text-align: center;
     font-weight: bold;
