@@ -24,7 +24,7 @@ document.querySelector('#login-button').addEventListener('click', async (event) 
         sessionStorage.setItem('userId', loggedInUser.id);
         // Store the email in session storage upon successful login
         sessionStorage.setItem('emailId', loggedInUser.email);
-       console.log(loggedInUser); 
+        
         // If login is successful, display a success message and redirect to the index page
         //alert('Login successful');
         window.location.href = "startquiz.html";

@@ -49,13 +49,13 @@ body {
 }
 
 .card-img-top.profile-image {
-    width: 100%;
+    width: 30%;
     border-top-left-radius: calc(.25rem - 1px);
     border-top-right-radius: calc(.25rem - 1px);
 }
 
 .profile-image {
-    width: 400%;
+    width: 20%;
 }
 
 .form-control {
@@ -125,13 +125,3 @@ input[type="password"] {
     margin-left: 10px; /* Increase margin from the left to position it away from the logo */
     margin-right: 150px; /* Increase margin from the right to position it away from the navigation bar */
 }
-
-/*style for profile image
-.profile-image{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-left: 40%;
-    margin-top: 10px;
-}
-

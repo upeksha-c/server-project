@@ -1,5 +1,5 @@
 import { User } from './Userinfo.js';
-import { BACKEND_URL } from './config.js';
+import { BACKEND_URL } from '../config.js';
 
 // Description: Profile class to display user profile information on the UI
 class Profile {
@@ -26,7 +26,7 @@ class Profile {
   getUserInfo = () => {
     return new Promise(async (resolve, reject) => {
       try {
-        const response = await fetch('http://localhost:3001/user/register');
+        const response = await fetch(this.#BACKEND_URL + '/profile');
         if (response.ok) {
           const json = await response.json();
           this.#readJson(json);
@@ -42,7 +42,7 @@ class Profile {
 
   #readJson = (json) => {
     json.forEach((node) => {
-      const user = new User(node.id, node.firstname, node.lastname, node.phone, node.email, node.image_name);
+      const user = new User(node.id, node.firstname, node.lastname, node.phone, node.email);
       this.#user.push(user);
     });
   };
