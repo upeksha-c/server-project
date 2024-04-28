@@ -4,6 +4,6 @@ const user = new User();
 
 const profile = document.querySelector('#profile')
 
-if(!user.id){
+if(!user.isLoggedIn){
     profile.style.display = 'none'
 }
