@@ -1,32 +1,30 @@
 import { Contact } from "./class/contactUs.js";
 const contact = new Contact();
 
-const submitBtn = document.querySelector('#contacts-submit')
+const submitBtn = document.querySelector('#btn-submit')
 
 //add a event listener for form submit button 
 submitBtn.addEventListener('click',function(event) {
     event.preventDefault();
 
     //get inputs to a variable
-    const firstname = document.querySelector('#exampleInputFirstName')
-    const lastname = document.querySelector('#exampleInputLastName')
-    const email = document.querySelector('#exampleInputEmail1')
-    const company = document.querySelector('#exampleInputCompany')
-    const country = document.querySelector('#C_Country')
-    const phone = document.querySelector('#C_BusPhone')
-    const message = document.querySelector('#Comments')
+    const fullname = document.querySelector('#fullname')
+    const email = document.querySelector('#email')
+    const phone = document.querySelector('#phone')
+    const subject = document.querySelector('#subject')
+    const message = document.querySelector('#message')
 
     //Do submit
-    contact.formSubmit(firstname.value,lastname.value,email.value,company.value,country.value,phone.value,message.value).then(json => {
-        console.log(json)
-        const div = document.querySelector('.col-md-8')
+    contact.formSubmit(fullname.value,email.value,phone.value,subject.value,message.value).then(json => {
+        const div = document.querySelector('#main-container')
         div.style.display = "none"
 
 
-        const newDiv = document.querySelector(".row")
+        const newDiv = document.querySelector("#wrapper-content")
         newDiv.style.display = 'flex';
         newDiv.style.justifyContent = 'center';
         newDiv.style.alignItems = 'center';
+        newDiv.style.padding = '5%';
 
         //call thankyou function
         newDiv.appendChild(thankForContact());
