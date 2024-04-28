@@ -3,11 +3,9 @@ POST http://localhost:3001/contactUs
 Content-Type: application/json
 
 {
-    "first_name":"Nadun",
-    "last_name": "Bassa",
+    "full_name":"Nadun",
     "email":"nadu@gmail.com",
-    "company":"",
-    "country": "Sri Lanka",
     "phone":"0506767676",
+    "subject":"Get details",
     "message": "Hello! I recently came across your quiz website and I'm loving the experience so far. However, I encountered a small issue/question and wanted to reach out for assistance. Could you please provide guidance on [describe the issue/question]? Thanks in advance for your help!"
 }
