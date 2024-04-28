@@ -17,8 +17,8 @@ POST http://localhost:3001/user/login
 Content-Type: application/json
     
 {
-        "email": "jon@todi.com",
-        "password": "joune4786"
+        "email": "jon@todiii.com",
+        "password": "jounii4786"
 }
 
 ### Login with invalid credentials
@@ -35,12 +35,12 @@ POST http://localhost:3001/user/register
 Content-Type: application/json
     
 {
-        "firstname": "Joupt",
-        "lastname": "Junant",
-        "phone": "1234585856",
-        "email": "jon@todi.com",
-        "image_name": "image6lt.jpg",
-        "password": "joune4786"
+        "firstname": "Jouian",
+        "lastname": "Juian",
+        "phone": "1234585651",
+        "email": "jon@doiia.com",
+        "image_name": "image.jpg",
+        "password": "joui86"
 }
 
 

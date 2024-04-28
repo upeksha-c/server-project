@@ -1,6 +1,7 @@
 //backend url
 const BACKEND_URL = 'http://localhost:3001';
 
+
 class User {
   #id = undefined
   #firstname = undefined
@@ -60,7 +61,8 @@ class User {
  
   async login(email,password) {
     const data = JSON.stringify({ email: email, password: password})
-    const response = await fetch(BACKEND_URL + '/user/login',{
+    const response = await fetch(BACKEND_URL = '/user/login', {
+  
       method: 'post',
       headers: {'Content-Type':'application/json'},
       body: data
@@ -70,10 +72,7 @@ class User {
       console.log(json)
       this.#id = json.id
       this.#email = json.email
-      this.#firstname = json.firstname
-      this.#lastname = json.lastname
-      this.#phone = json.phone
-      this.#fullName = json.firstname + ' ' + json.lastname
+     
       sessionStorage.setItem('user',JSON.stringify(json))
       return this
     } else {
@@ -91,7 +90,7 @@ class User {
       this.#phone = json.phone
       this.#email = json.email
       this.#fullName = json.firstname + ' ' + json.lastname
-      this.#image_name = formData.image_name
+      this.#image_name = json.image_name
       return this
     } else {
       throw response.statusText
@@ -109,7 +108,13 @@ class User {
     })
     if (response.ok === true) {
       const json = await response.json()
-      return json.id
+      this.#firstname = json.firstname
+      this.#lastname = json.lastname
+      this.#phone = json.phone
+      this.#email = json.email
+      this.#fullName = json.firstname + ' ' + json.lastname
+      this.#image_name = json.image_name
+      return this
     } else {
       throw response.statusText
     }
@@ -142,8 +147,7 @@ class User {
     this.#phone = undefined
     this.#email = undefined
     this.#fullName = undefined
-    this.#image_name = undefined
-    sessionStorage.removeItem('user')
+      sessionStorage.removeItem('user')
   }
 
  

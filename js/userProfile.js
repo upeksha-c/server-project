@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     img.setAttribute('alt', 'profile image');
      
     if (user.image_name) {
-      img.src = BACKEND_URL + '/images/' + user.image_name;
+      img.src = BACKEND_URL + '/public/images/' + user.image_name;
       console.log(img.src);
     } else {
       img.src = BACKEND_URL + 'images/placeholder_images.png';

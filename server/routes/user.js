@@ -1,6 +1,7 @@
 const express = require('express');
 const { query } = require('../helpers/db.js');
 const bcrypt = require('bcrypt');
+const fileUpload = require('express-fileupload');
 
 const userRouter = express.Router();
 
@@ -63,7 +64,7 @@ userRouter.post("/login", async (req, res) => {
 
 
 userRouter.post("/register",async(req,res) => {
-  let file_name =""
+  let file_name = ""
   try {
     if (req.files) {
       const file = req.files.image
@@ -88,6 +89,7 @@ userRouter.post("/register",async(req,res) => {
   } catch (error) {
     res.statusMessage = error
     res.status(500).json({error:error})
+   
   }
 })
 
