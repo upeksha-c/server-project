@@ -2,12 +2,10 @@ import { BACKEND_URL } from "../config.js"
 
 class Contact{
     #id_inquiry = undefined
-    #first_name = undefined
-    #last_name = undefined
+    #full_name = undefined
     #email = undefined
-    #company = undefined
-    #country = undefined
     #phone = undefined
+    #subject = undefined
     #message = undefined
 
 
@@ -19,28 +17,20 @@ class Contact{
         return this.#id_inquiry
     }
 
-    get first_name(){
-        return this.#first_name
-    }
-
-    get last_name(){
-        return this.#last_name
+    get full_name(){
+        return this.#full_name
     }
 
     get email(){
         return this.#email
     }
 
-    get company(){
-        return this.#company
-    }
-
-    get country(){
-        return this.#country
-    }
-
     get phone(){
         return this.#phone
+    }
+
+    get subject(){
+        return this.#subject
     }
 
     get message(){
@@ -48,8 +38,8 @@ class Contact{
     }
 
 
-    async formSubmit(first_name,last_name,email,company,country,phone,message){
-        const data = JSON.stringify({first_name:first_name,last_name:last_name,email:email,company:company,country:country,phone:phone,message:message})
+    async formSubmit(full_name,email,phone,subject,message){
+        const data = JSON.stringify({full_name:full_name, email:email, phone:phone, subject:subject,message:message})
         const response = await fetch(BACKEND_URL+'/contactUs',{
             method: 'post',
             headers: {'Content-Type':'application/json'},

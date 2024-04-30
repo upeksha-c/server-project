@@ -1,10 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const multer = require('multer');
 //const bcrypt = require('bcrypt');
 const fileUpload = require('express-fileupload');
 
-// Import routes
 const { userRouter } = require('./routes/user.js');
 const { questionsRouter } = require('./routes/questions.js');
 const { fbRouter } = require('./routes/feedbacks.js')
@@ -18,11 +16,13 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(fileUpload());
-app.use(express.urlencoded({extended: false}))
+
 
 // Static files 
 app.use(express.static('public'))
+
 // Routes
 app.use('/user', userRouter);
 app.use('/',questionsRouter)

@@ -5,7 +5,7 @@ const carouselRouter = express.Router()
 
 carouselRouter.get("/carousel",async(req,res) => {
     try{
-        const result = await query('SELECT * FROM categories Limit 9');
+        const result = await query('SELECT * FROM categories ORDER BY random() Limit 9');
         const rows = result.rows ? result.rows : []
         res.status(200).json(rows)
     }catch(error){
