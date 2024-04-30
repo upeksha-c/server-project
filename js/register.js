@@ -45,11 +45,10 @@ document.querySelector('#register-button').addEventListener('click', async (even
   try {
     // Attempt to register the user using the provided credentials
     //await user.register(firstname, lastname, phone, email, image, password, confirmPassword);
-    await user.register(formData);
+     user.register(formData);
     
     // If registration is successful, redirect to the login page
-    console.log("Registration successful");
-    window.location.href = "login.html";
+       window.location.href = "login.html"; 
   } catch (error) {
     // If registration fails, display an error message
     console.error('Registration failed:', error);
