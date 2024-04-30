@@ -1,7 +1,6 @@
 // Import the User class from the User module
 import { User } from "./class/Userinfo.js";
 
-
 // Create a new instance of the User class
 const user = new User();
 console.log(user);
@@ -58,6 +57,10 @@ document.querySelector('#register-button').addEventListener('click', async (even
   }
 
 
+
+
+
+  
 /* // Add event listener to the form submission
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {

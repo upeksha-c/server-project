@@ -1,6 +1,7 @@
 const express = require('express');
 const { query } = require('../helpers/db.js');
 const bcrypt = require('bcrypt');
+const fileUpload = require('express-fileupload');
 
 const userRouter = express.Router();
 
@@ -49,7 +50,7 @@ userRouter.post("/login", async (req, res) => {
     if (result.rowCount === 1) {
       const user = result.rows[0];
       if (bcrypt.compareSync(req.body.password, user.password)) {
-        res.status(200).json({ id: user.id, email: user.email, firstname: user.firstname, lastname: user.lastname, phone: user.phone});
+        res.status(200).json({ id: user.id, email: user.email, firstname: user.firstname, lastname: user.lastname, phone: user.phone, image_name: user.image_name });
       } else {
         res.status(401).json({ error: 'Invalid login' });
       }
@@ -63,10 +64,10 @@ userRouter.post("/login", async (req, res) => {
 
 
 userRouter.post("/register",async(req,res) => {
-  let file_name =""
+  let file_name = ""
   try {
     if (req.files) {
-      const file = req.files.image
+      const file = req.files.image_input
       file_name = file.name
       const uploadPath = `./public/images/${file_name}`
       file.mv(uploadPath,(err) => {
@@ -88,6 +89,7 @@ userRouter.post("/register",async(req,res) => {
   } catch (error) {
     res.statusMessage = error
     res.status(500).json({error:error})
+   
   }
 })
 

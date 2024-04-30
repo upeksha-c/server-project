@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
 const fileUpload = require('express-fileupload');
 
 // Import routes
@@ -19,6 +19,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(fileUpload());
+app.use(express.urlencoded({extended: false}))
+
 // Static files 
 app.use(express.static('public'))
 // Routes
@@ -28,21 +30,29 @@ app.use('/',fbRouter)
 app.use('/',carouselRouter)
 app.use('/',scoreRouter)
 app.use('/',contactUsRouter)
-/*app.use(express.urlencoded({ 
-    extended: false, 
-    limit: '10000mb',
-    parameterLimit: 2,
-}));
- 
-
-
-
 
 
 // Default route
 app.get('/', (req, res) => {
     res.send('Welcome to Quizzify!');
 });
+
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
+
+
+
+
+
+
+
+/*app.use(express.urlencoded({ 
+    extended: false, 
+    limit: '10000mb',
+    parameterLimit: 2,
+}));
+ 
 
 const storage = multer.diskStorage({
     destination: function (req, file, callback) {
@@ -86,6 +96,3 @@ app.post('/user/register', upload.single('input-file'), async (req, res) => {
   });*/
 
 // Start server
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
-});

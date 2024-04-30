@@ -4,7 +4,7 @@ GET http://localhost:3001/user
 
 
 ### Get user data
-GET http://localhost:3001/user/profile/46
+GET http://localhost:3001/user/profile/41
 Content-Type: application/json
     
 
@@ -17,8 +17,8 @@ POST http://localhost:3001/user/login
 Content-Type: application/json
     
 {
-        "email": "jon@todi.com",
-        "password": "joune4786"
+        "email": "jon@doiia.com",
+        "password": "joui86"
 }
 
 ### Login with invalid credentials
@@ -35,12 +35,12 @@ POST http://localhost:3001/user/register
 Content-Type: application/json
     
 {
-        "firstname": "Joupt",
-        "lastname": "Junant",
-        "phone": "1234585856",
-        "email": "jon@todi.com",
-        "image_name": "image6lt.jpg",
-        "password": "joune4786"
+        "firstname": "jane",
+        "lastname": "ban",
+        "phone": "1234555651",
+        "email": "jane@ban.com",
+        "image_name": "image.jpg",
+        "password": "jane12"
 }
 
 

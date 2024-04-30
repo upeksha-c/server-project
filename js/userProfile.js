@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       img.src = BACKEND_URL + '/images/' + user.image_name;
       console.log(img.src);
     } else {
-      img.src = BACKEND_URL + 'images/placeholder_images.png';
+      img.src = BACKEND_URL + '/images/placeholder_image.png';
     }
     parent_element.appendChild(img);
     
