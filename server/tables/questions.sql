@@ -198,8 +198,18 @@ VALUES ('What is overfitting in machine learning?', 3, '{ "Overfitting is a type
 INSERT INTO questions(question, id_category, options, correct_answer) 
 VALUES ('What is underfitting in machine learning?', 3, '{"Underfitting is a type of unsupervised learning algorithm", "Underfitting is the development of robots", "Underfitting is a type of reinforcement learning algorithm" , "Underfitting occurs when a model is too simple to capture the underlying patterns in the data, resulting in poor performance on both the training and test datasets"}', 'Underfitting occurs when a model is too simple to capture the underlying patterns in the data, resulting in poor performance on both the training and test datasets');
 
-INSERT INTO questions(question, id_category, options, correct_answer) 
-VALUES ('What is the difference between strong AI and weak AI?', 3, '{"Strong AI, also known as artificial general intelligence (AGI), refers to AI systems that exhibit human-like intelligence across a wide range of tasks and contexts, while weak AI refers to AI systems that are designed for specific tasks and do not possess general intelligence", "Strong AI is a type of unsupervised learning algorithm, while weak AI is a type of supervised learning algorithm", "Strong AI is the development of robots, while weak AI is the development of software applications", "Strong AI is a type of reinforcement learning algorithm, while weak AI is a type of supervised learning algorithm"}', 'Strong AI, also known as artificial general intelligence (AGI), refers to AI systems that exhibit human-like intelligence across a wide range of tasks and contexts, while weak AI refers to AI systems that are designed for specific tasks and do not possess general intelligence');
+INSERT INTO questions (question, id_category, options, correct_answer) 
+VALUES (
+    'What are the primary differences between supervised learning and unsupervised learning?', 
+    3, 
+    '{
+        "Supervised learning requires labeled data, while unsupervised learning works with unlabeled data",
+        "Supervised learning is used for classification and regression tasks, while unsupervised learning is used for clustering and dimensionality reduction",
+        "Supervised learning algorithms are trained using input-output pairs, while unsupervised learning algorithms are trained on input data without explicit output labels",
+        "Supervised learning aims to learn a mapping from input to output, while unsupervised learning aims to find hidden patterns or structures in data without explicit guidance"
+    }', 
+    'Supervised learning requires labeled data, while unsupervised learning works with unlabeled data'
+);
 
 INSERT INTO questions(question, id_category, options, correct_answer) 
 VALUES ('What is the curse of dimensionality in machine learning?', 3, '{ "The curse of dimensionality is a type of neural network architecture", "The curse of dimensionality refers to the challenges and limitations that arise when working with high-dimensional data","The curse of dimensionality is the development of robots", "The curse of dimensionality is a type of reinforcement learning algorithm"}', 'The curse of dimensionality refers to the challenges and limitations that arise when working with high-dimensional data');
@@ -213,9 +223,18 @@ VALUES ('What is overfitting in machine learning?', 3, '{ "Overfitting is a type
 INSERT INTO questions(question, id_category, options, correct_answer) 
 VALUES ('What is underfitting in machine learning?', 3, '{"Underfitting is a type of unsupervised learning algorithm", "Underfitting occurs when a model is too simple to capture the underlying patterns in the data, resulting in poor performance on both the training and test datasets", "Underfitting is the development of robots", "Underfitting is a type of reinforcement learning algorithm"}', 'Underfitting occurs when a model is too simple to capture the underlying patterns in the data, resulting in poor performance on both the training and test datasets');
 
-INSERT INTO questions(question, id_category, options, correct_answer) 
-VALUES ('What is the difference between classification and regression in machine learning?', 3, '{"Classification is a type of machine learning task where the goal is to predict the category or class label of an input, while regression is a type of machine learning task where the goal is to predict a continuous numeric value", "Classification and regression are the same in machine learning", "Classification is the development of robots, while regression is the development of software applications", "Classification is a type of unsupervised learning algorithm, while regression is a type of supervised learning algorithm"}', 'Classification is a type of machine learning task where the goal is to predict the category or class label of an input, while regression is a type of machine learning task where the goal is to predict a continuous numeric value');
-
+INSERT INTO questions (question, id_category, options, correct_answer) 
+VALUES (
+    'What is the purpose of regularization in machine learning?', 
+    3, 
+    '{
+        "Regularization is used to prevent overfitting by adding a penalty term to the loss function",
+        "Regularization is only applicable in unsupervised learning tasks",
+        "Regularization is a technique for feature selection in machine learning models",
+        "Regularization is used to increase the model complexity and flexibility"
+    }', 
+    'Regularization is used to prevent overfitting by adding a penalty term to the loss function'
+);
 
 
 
@@ -351,7 +370,7 @@ INSERT INTO questions(question, id_category, options, correct_answer)
 VALUES ('What is ecotourism?', 6, '{"Ecotourism focuses on responsible travel to natural areas that conserve the environment and improve the well-being of local people", "Ecotourism involves traveling to urban areas and exploring cultural heritage", "Ecotourism emphasizes luxury accommodations and high-end travel experiences", "Ecotourism encourages mass tourism and exploitation of natural resources"}', 'Ecotourism focuses on responsible travel to natural areas that conserve the environment and improve the well-being of local people');
 
 INSERT INTO questions(question, id_category, options, correct_answer) 
-VALUES ('What are the components of a tourism product?', 6, '{"Attractions, accommodations, transportation,amenities, and hospitality services", "Attractions, shopping malls, restaurants, and entertainment venues", "Transportation, technology, accommodations, and travel agencies", "Accommodations, fashion, cuisine, and guided tours"}', 'Attractions, accommodations, transportation, amenities, and hospitality services');
+VALUES ('What are the components of a tourism product?', 6, '{"Attractions, accommodations, transportation, amenities, and hospitality services", "Attractions, shopping malls, restaurants, and entertainment venues", "Transportation, technology, accommodations, and travel agencies", "Accommodations, fashion, cuisine, and guided tours"}', 'Attractions, accommodations, transportation, amenities, and hospitality services');
 
 INSERT INTO questions(question, id_category, options, correct_answer) 
 VALUES ('What is yield management in the tourism industry?', 6, '{"Yield management focuses on reducing operational costs in the tourism sector", "Yield management prioritizes customer satisfaction over profitability", "Yield management refers to the management of natural resources in tourist destinations" , "Yield management involves adjusting prices and availability to maximize revenue from perishable resources"}', 'Yield management involves adjusting prices and availability to maximize revenue from perishable resources');
@@ -445,8 +464,18 @@ INSERT INTO questions(question, id_category, options, correct_answer)
 VALUES ('What is the purpose of a load balancer in cloud computing?', 7, '{"A load balancer is used to store data in a cloud environment","A load balancer distributes incoming network traffic across multiple servers to ensure high availability and reliability of applications",  "A load balancer is a virtual machine", "A load balancer is a software for managing containers"}', 'A load balancer distributes incoming network traffic across multiple servers to ensure high availability and reliability of applications');
 
 
-INSERT INTO questions(question, id_category, options, correct_answer) 
-VALUES ('What is Infrastructure as Code (IaC)?', 7, '{ "Infrastructure as Code is a physical server in a data center", "Infrastructure as Code is a cloud computing service", "Infrastructure as Code is a virtual machine" , "Infrastructure as Code is the practice of managing and provisioning computing infrastructure through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools"}', 'Infrastructure as Code is the practice of managing and provisioning computing infrastructure through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools');
+INSERT INTO questions (question, id_category, options, correct_answer) 
+VALUES (
+    'What is the difference between public cloud, private cloud, and hybrid cloud?', 
+    7, 
+    '{
+        "Public cloud is owned and operated by a third-party cloud service provider and is available to anyone on the internet, while private cloud is operated solely for an organization and is not shared with other organizations, and hybrid cloud combines both public and private cloud environments",
+        "Public cloud is only accessible via the internet, while private cloud is only accessible via an organization''s intranet, and hybrid cloud is a combination of on-premises infrastructure and traditional data centers",
+        "Public cloud is a type of hardware infrastructure, while private cloud is a software service, and hybrid cloud is a networking protocol",
+        "Public cloud is managed by the organization internally, while private cloud is managed by third-party vendors, and hybrid cloud is managed by a combination of both"
+    }', 
+    'Public cloud is owned and operated by a third-party cloud service provider and is available to anyone on the internet, while private cloud is operated solely for an organization and is not shared with other organizations, and hybrid cloud combines both public and private cloud environments'
+);
 
 INSERT INTO questions(question, id_category, options, correct_answer) 
 VALUES ('What is a serverless architecture?', 7, '{"Serverless architecture is a cloud computing model where cloud providers manage the infrastructure and automatically allocate resources as needed, allowing developers to focus on writing code without worrying about server management", "Serverless architecture is a physical server in a data center", "Serverless architecture is a virtual machine", "Serverless architecture is a type of hypervisor"}', 'Serverless architecture is a cloud computing model where cloud providers manage the infrastructure and automatically allocate resources as needed, allowing developers to focus on writing code without worrying about server management');
