@@ -49,9 +49,11 @@ body {
 }
 
 .card-img-top.profile-image {
-    width: 80%;
+    width: 50%;
     border-top-left-radius: calc(.25rem - 1px);
     border-top-right-radius: calc(.25rem - 1px);
+    /* to move image away from the borders */
+    margin-left: 45%;
 }
 
 .profile-image {

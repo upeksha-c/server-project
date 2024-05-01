@@ -38,8 +38,7 @@ document.querySelector('#register-button').addEventListener('click', async (even
 
   // Check if passwords match
   if (password !== confirmPassword) {
-    alert('Passwords do not match');
-    
+    alert('Passwords do not match'); 
   }
 
   try {
