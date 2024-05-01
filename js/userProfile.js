@@ -6,33 +6,32 @@ document.addEventListener('DOMContentLoaded', async () => {
   const user = new User(); // Instantiate the User class
   
   // Function to render profile image
-  function renderProfileImage(parent_element, user) {
-    const img = document.createElement('img');
-    img.setAttribute('class', 'card-img-top profile-image');
-    img.setAttribute('alt', 'profile image');
-     
+  function renderProfileImage(user) {
+    const img = document.querySelector('#profile-image');     
     if (user.image_name) {
       img.src = BACKEND_URL + '/images/' + user.image_name;
       console.log(img.src);
     } else {
-      img.src = BACKEND_URL + '/images/placeholder_image.png';
+      img.src = BACKEND_URL + '/images/placeholder_image.jpg';
     }
-    parent_element.appendChild(img);
     
   }
 
   // Function to display user profile information
   function displayProfile() {
-    // Get HTML elements for displaying user details
-    const nameElement = document.getElementById('name');
-    const phoneElement = document.getElementById('phone');
-    const emailElement = document.getElementById('email');
-    // Get user full name
-    const fullName = user.firstname + ' ' + user.lastname;
-     // Populate user information into HTML elements
-    nameElement.innerHTML = user.fullName;
-    phoneElement.innerHTML = user.phone;
-    emailElement.innerHTML = user.email;
+    //get elements to variables
+    const fnameElement = document.querySelector('#fname')
+    const lnameElement = document.querySelector('#lname');
+    const emailElement = document.querySelector('#email');    
+    const phoneElement = document.querySelector('#phone');    
+
+   
+    // Populate user information into HTML elements
+    fnameElement.value = user.firstname;    
+    lnameElement.value = user.lastname;
+    emailElement.value = user.email;
+    phoneElement.value = user.phone;
+
   }
 
   // Get the profile image container
@@ -42,7 +41,7 @@ console.log(image_div);
   // Check if user is logged in
   if (user.isLoggedIn) {
     // Render profile image
-    renderProfileImage(image_div, user);
+    renderProfileImage(user);
     // Display user profile information
     displayProfile();
   }
