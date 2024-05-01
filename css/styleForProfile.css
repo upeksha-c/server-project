@@ -49,7 +49,7 @@ body {
 }
 
 .card-img-top.profile-image {
-    width: 30%;
+    width: 80%;
     border-top-left-radius: calc(.25rem - 1px);
     border-top-right-radius: calc(.25rem - 1px);
 }

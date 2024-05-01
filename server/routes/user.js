@@ -29,30 +29,16 @@ userRouter.get("/user", async (req, res) => {
   }
 });
 
-userRouter.get("/profile", async (req, res) => {
+userRouter.get("/profile/:id", async (req, res) => {
   try {
-    const userId = parseInt(req.query.id);
-
-    // Check if userId is a valid integer
-    if (isNaN(userId)) {
-      return res.status(400).json({ error: 'Invalid user ID' });
-    }
-
-    // Query database to retrieve user details by ID
-    const sql = `SELECT * FROM userinfo WHERE id = $1`;
-    const result = await query(sql, [userId]);
-
-    // Check if user exists
-    if (result.rows.length === 0) {
+    const queryResult = await query('SELECT * FROM userinfo WHERE id = $1', [req.params.id]);
+    console.log(queryResult);
+    if (queryResult.rows.length === 0) {
       return res.status(404).json({ error: 'User not found' });
     }
-
-    // User found, send user details in response
-    const user = result.rows[0]; // Assuming only one user is returned
-    res.status(200).json(user);
+    res.status(200).json(queryResult.rows[0]);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({ error: error.message });
   }
 });
 
