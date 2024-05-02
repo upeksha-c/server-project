@@ -54,23 +54,6 @@ profileRouter.post("/new", async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-
-
-
-  /*
-  // Update user profile
-  profileRouter.put("/", async (req, res) => {
-    try {
-      const sql = `UPDATE userinfo SET firstname = $1, lastname = $2, phone = $3 WHERE email = $4 RETURNING *`
-  
-      const result = await query(sql, [req.body.firstname, req.body.lastname, req.body.phone, req.body.email]);
-      res.status(200).json({ message: 'Profile updated' });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Internal server error' });
-    }
-  });*/
-
  
     module.exports = {
         profileRouter

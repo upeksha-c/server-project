@@ -104,24 +104,6 @@ userRouter.get("/profile/:id", async (req, res) => {
   }
 });
 
-/*userRouter.post("/profile/new",async(req,res) => {
-  bcrypt.hash(req.body.password,10,async (err,hash) => {
-    if (!err) {
-      try {
-        const sql = `insert into userinfo (images) values ($1) returning id`
-        const result = await query(sql,[req.body.images,req.body.lastname,req.body.phone,req.body.email,hash])
-        res.status(200).json({id: result.rows[0].id, firstname: req.body.firstname, lastname: req.body.lastname, phone: req.body.phone, email: req.body.email,}) 
-      } catch (error) {
-        res.statusMessage = error
-        res.status(500).json({error: error})
-      }
-    } else {
-      res.statusMessage = err
-      res.status(500).json({error: err})
-    }
-  })
-})*/
-
 module.exports = {
   userRouter
 };
